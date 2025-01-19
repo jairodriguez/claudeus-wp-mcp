@@ -1,0 +1,1613 @@
+{
+    "/": {
+            "namespace": "",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "default": "view",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/"
+                }]
+            }
+        },
+        "/oembed/1.0": {
+            "namespace": "oembed/1.0",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "namespace": {
+                        "default": "oembed/1.0",
+                        "required": false
+                    },
+                    "context": {
+                        "default": "view",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/oembed/1.0"
+                }]
+            }
+        },
+        "/oembed/1.0/embed": {
+            "namespace": "oembed/1.0",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "url": {
+                        "description": "The URL for the oEmbed resource.",
+                        "type": "string",
+                        "format": "uri",
+                        "required": true
+                    },
+                    "format": {
+                        "default": "json",
+                        "required": false
+                    },
+                    "maxwidth": {
+                        "default": 600,
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/oembed/1.0/embed"
+                }]
+            }
+        },
+        "/elementor/v1/globals": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/globals"
+                }]
+            }
+        },
+        "/elementor/v1/globals/colors": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/globals/colors"
+                }]
+            }
+        },
+        "/elementor/v1/globals/colors/(?P<id>[\\w]+)": {
+            "namespace": "elementor/v1",
+            "methods": ["GET", "POST", "DELETE"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["POST"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/elementor/v1/globals/typography": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/globals/typography"
+                }]
+            }
+        },
+        "/elementor/v1/globals/typography/(?P<id>[\\w]+)": {
+            "namespace": "elementor/v1",
+            "methods": ["GET", "POST", "DELETE"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["POST"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/elementor/v1/favorites": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "required": false
+                    },
+                    "page": {
+                        "description": "Current page of the collection.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "required": false
+                    },
+                    "per_page": {
+                        "description": "Maximum number of items to be returned in result set.",
+                        "type": "integer",
+                        "default": 10,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "required": false
+                    },
+                    "search": {
+                        "description": "Limit results to those matching a string.",
+                        "type": "string",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/favorites"
+                }]
+            }
+        },
+        "/elementor/v1/favorites/(?P<id>[\\w]+)": {
+            "namespace": "elementor/v1",
+            "methods": ["POST", "DELETE"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "id": {
+                        "description": "Type of favorites.",
+                        "type": "string",
+                        "required": true
+                    },
+                    "favorite": {
+                        "description": "The favorite slug to create.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "id": {
+                        "description": "Type of favorites.",
+                        "type": "string",
+                        "required": true
+                    },
+                    "favorite": {
+                        "description": "The favorite slug to delete.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/wp/v2/posts": {
+            "namespace": "wp/v2",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "enum": ["view", "embed", "edit"],
+                        "default": "view",
+                        "required": false
+                    },
+                    "page": {
+                        "description": "Current page of the collection.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "required": false
+                    },
+                    "per_page": {
+                        "description": "Maximum number of items to be returned in result set.",
+                        "type": "integer",
+                        "default": 10,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "required": false
+                    },
+                    "search": {
+                        "description": "Limit results to those matching a string.",
+                        "type": "string",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/wp/v2/posts"
+                }]
+            }
+        },
+        "/wc/v3/products": {
+            "namespace": "wc/v3",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "enum": ["view", "edit"],
+                        "default": "view",
+                        "required": false
+                    },
+                    "page": {
+                        "description": "Current page of the collection.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "required": false
+                    },
+                    "per_page": {
+                        "description": "Maximum number of items to be returned in result set.",
+                        "type": "integer",
+                        "default": 10,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/wc/v3/products"
+                }]
+            }
+        },
+        "/wc/v3/orders": {
+            "namespace": "wc/v3",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "enum": ["view", "edit"],
+                        "default": "view",
+                        "required": false
+                    },
+                    "page": {
+                        "description": "Current page of the collection.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "required": false
+                    },
+                    "per_page": {
+                        "description": "Maximum number of items to be returned in result set.",
+                        "type": "integer",
+                        "default": 10,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "required": false
+                    },
+                    "status": {
+                        "description": "Limit result set to orders assigned a specific status.",
+                        "type": "string",
+                        "enum": ["pending", "processing", "on-hold", "completed", "cancelled", "refunded", "failed", "trash"],
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/wc/v3/orders"
+                }]
+            }
+        },
+        "/wc/v3/customers": {
+            "namespace": "wc/v3",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "enum": ["view", "edit"],
+                        "default": "view",
+                        "required": false
+                    },
+                    "page": {
+                        "description": "Current page of the collection.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "required": false
+                    },
+                    "per_page": {
+                        "description": "Maximum number of items to be returned in result set.",
+                        "type": "integer",
+                        "default": 10,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/wc/v3/customers"
+                }]
+            }
+        },
+        "/yith/wishlist/v1/wishlists": {
+            "namespace": "yith/wishlist/v1",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "enum": ["view", "edit"],
+                        "default": "view",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/yith/wishlist/v1/wishlists"
+                }]
+            }
+        },
+        "/batch/v1": {
+            "namespace": "",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "validation": {
+                        "type": "string",
+                        "enum": ["require-all-validate", "normal"],
+                        "default": "normal",
+                        "required": false
+                    },
+                    "requests": {
+                        "type": "array",
+                        "maxItems": 25,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "method": {
+                                    "type": "string",
+                                    "enum": ["POST", "PUT", "PATCH", "DELETE"],
+                                    "default": "POST"
+                                },
+                                "path": {
+                                    "type": "string",
+                                    "required": true
+                                },
+                                "body": {
+                                    "type": "object",
+                                    "properties": [],
+                                    "additionalProperties": true
+                                },
+                                "headers": {
+                                    "type": "object",
+                                    "properties": [],
+                                    "additionalProperties": {
+                                        "type": ["string", "array"],
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "required": true
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/batch/v1"
+                }]
+            }
+        },
+        "/oembed/1.0/proxy": {
+            "namespace": "oembed/1.0",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "url": {
+                        "description": "The URL for the oEmbed resource.",
+                        "type": "string",
+                        "format": "uri",
+                        "required": true
+                    },
+                    "format": {
+                        "default": "json",
+                        "required": false
+                    },
+                    "maxwidth": {
+                        "default": 600,
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/oembed/1.0/proxy"
+                }]
+            }
+        },
+        "/elementor/v1/kit-elements-defaults": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/kit-elements-defaults"
+                }]
+            }
+        },
+        "/litespeed/v1": {
+            "namespace": "litespeed/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "namespace": {
+                        "default": "litespeed/v1",
+                        "required": false
+                    },
+                    "context": {
+                        "default": "view",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/litespeed/v1"
+                }]
+            }
+        },
+        "/litespeed/v1/toggle_crawler_state": {
+            "namespace": "litespeed/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/litespeed/v1/toggle_crawler_state"
+                }]
+            }
+        },
+        "/elementor/v1/kit-elements-defaults/(?P<type>[\\w\\-\\_]+)": {
+            "namespace": "elementor/v1",
+            "methods": ["POST", "PUT", "PATCH", "DELETE"],
+            "endpoints": [{
+                "methods": ["POST", "PUT", "PATCH"],
+                "args": {
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the element.",
+                        "required": true
+                    },
+                    "settings": {
+                        "description": "All the default values for the requested type",
+                        "type": "object",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the element.",
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/elementor/v1/site-navigation/recent-posts": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "posts_per_page": {
+                        "description": "Number of posts to return",
+                        "type": "integer",
+                        "required": true
+                    },
+                    "post_type": {
+                        "description": "Post types to retrieve",
+                        "type": "array",
+                        "default": ["page", "post", "elementor_library"],
+                        "required": false
+                    },
+                    "post__not_in": {
+                        "description": "Post id`s to exclude",
+                        "type": "array",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/site-navigation/recent-posts"
+                }]
+            }
+        },
+        "/elementor/v1/template-library/templates": {
+            "namespace": "elementor/v1",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }, {
+                "methods": ["POST"],
+                "args": {
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the document",
+                        "required": false
+                    },
+                    "type": {
+                        "description": "The document type.",
+                        "type": "string",
+                        "enum": [
+                            "page",
+                            "section",
+                            "landing-page",
+                            "popup",
+                            "header",
+                            "footer",
+                            "single",
+                            "single-post",
+                            "single-page",
+                            "archive",
+                            "search-results",
+                            "error-404",
+                            "product",
+                            "product-archive",
+                            "loop-item"
+                        ],
+                        "required": true
+                    },
+                    "content": {
+                        "description": "Elementor data object",
+                        "type": "object",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/template-library/templates"
+                }]
+            }
+        },
+        "/elementor/v1/global-widget/templates": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/global-widget/templates"
+                }]
+            }
+        },
+        "/wc/v3/marketplace/featured": {
+            "namespace": "wc/v3",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/wc/v3/marketplace/featured"
+                }]
+            }
+        },
+        "/wc/v3/marketplace/subscriptions": {
+            "namespace": "wc/v3",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/wc/v3/marketplace/subscriptions"
+                }]
+            }
+        },
+        "/elementor/v1/form-submissions": {
+            "namespace": "elementor/v1",
+            "methods": ["GET", "DELETE", "POST", "PUT", "PATCH"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "required": false
+                    },
+                    "page": {
+                        "description": "Current page of the collection.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "required": false
+                    },
+                    "per_page": {
+                        "description": "Maximum number of items to be returned in result set.",
+                        "type": "integer",
+                        "default": 50,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "required": false
+                    },
+                    "status": {
+                        "description": "Limit result set to submissions assigned one or more statuses.",
+                        "type": "string",
+                        "default": "all",
+                        "enum": ["all", "unread", "read", "trash"],
+                        "required": false
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "ids": {
+                        "description": "Unique identifiers for the objects.",
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    },
+                    "force": {
+                        "description": "Delete the object permanently.",
+                        "type": "boolean",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/form-submissions"
+                }]
+            }
+        },
+        "/elementor/v1/form-submissions/(?P<id>[\\d]+)": {
+            "namespace": "elementor/v1",
+            "methods": ["GET", "DELETE", "POST", "PUT", "PATCH"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    },
+                    "force": {
+                        "description": "Delete the object permanently.",
+                        "type": "boolean",
+                        "required": false
+                    }
+                }
+            }, {
+                "methods": ["POST", "PUT", "PATCH"],
+                "args": {
+                    "id": {
+                        "description": "Unique identifier for the object.",
+                        "type": "string",
+                        "required": true
+                    },
+                    "is_read": {
+                        "description": "mark whether the submission was read or not",
+                        "type": "boolean",
+                        "required": false
+                    },
+                    "values": {
+                        "description": "Form field values, receive an array, the key should be the form field id and the value should be the value.",
+                        "type": "object",
+                        "required": false
+                    }
+                }
+            }]
+        },
+        "/elementor/v1/form-submissions/restore": {
+            "namespace": "elementor/v1",
+            "methods": ["POST", "PUT", "PATCH"],
+            "endpoints": [{
+                "methods": ["POST", "PUT", "PATCH"],
+                "args": {
+                    "ids": {
+                        "description": "Unique identifiers for the objects.",
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/form-submissions/restore"
+                }]
+            }
+        },
+        "/elementor/v1/form-submissions/export": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "required": false
+                    },
+                    "format": {
+                        "description": "The format of the export (for now only csv).",
+                        "enum": ["csv"],
+                        "default": "csv",
+                        "required": false
+                    },
+                    "status": {
+                        "description": "Limit result set to submissions assigned one or more statuses.",
+                        "type": "string",
+                        "default": "all",
+                        "enum": ["all", "unread", "read", "trash"],
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/form-submissions/export"
+                }]
+            }
+        },
+        "/elementor/v1/form-submissions/referer": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made, determines fields present in response. (only \"options\" available for now)",
+                        "type": "string",
+                        "enum": ["options"],
+                        "default": "options",
+                        "required": false
+                    },
+                    "search": {
+                        "description": "Limit results to those matching a string.",
+                        "type": "string",
+                        "required": false
+                    },
+                    "value": {
+                        "description": "Limit results specific referer.",
+                        "type": "string",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/form-submissions/referer"
+                }]
+            }
+        },
+        "/elementor/v1/forms": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/forms"
+                }]
+            }
+        },
+        "/elementor-pro/v1/woocommerce-module": {
+            "namespace": "elementor-pro/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor-pro/v1/woocommerce-module"
+                }]
+            }
+        },
+        "/elementor-pro/v1/set-notice-dismissed": {
+            "namespace": "elementor-pro/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "post_id": {
+                        "type": "integer",
+                        "required": true
+                    },
+                    "is_custom_wc_cart_notice_dismissed": {
+                        "type": "boolean",
+                        "required": true
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor-pro/v1/set-notice-dismissed"
+                }]
+            }
+        },
+        "/elementor-pro/v1/get-notice-dismissed/(?P<post_id>\\d+)": {
+            "namespace": "elementor-pro/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }]
+        },
+        "/elementor-pro/v1/get-post-type-taxonomies": {
+            "namespace": "elementor-pro/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "post_type": {
+                        "description": "The post type for which to fetch the list of taxonomies.",
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor-pro/v1/get-post-type-taxonomies"
+                }]
+            }
+        },
+        "/elementor-pro/v1/refresh-loop": {
+            "namespace": "elementor-pro/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "post_id": {
+                        "description": "The post ID of the page containing the loop.",
+                        "type": "integer",
+                        "required": true
+                    },
+                    "widget_id": {
+                        "description": "The ID of the loop widget.",
+                        "type": "string",
+                        "required": true
+                    },
+                    "widget_filters": {
+                        "description": "The filters for the loop widget.",
+                        "type": "object",
+                        "required": true
+                    },
+                    "widget_model": {
+                        "description": "The model of the loop widget. In Editor mode only.",
+                        "type": "object",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor-pro/v1/refresh-loop"
+                }]
+            }
+        },
+        "/elementor-pro/v1/refresh-search": {
+            "namespace": "elementor-pro/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "post_id": {
+                        "description": "The post ID of the page containing the loop.",
+                        "type": "integer",
+                        "required": true
+                    },
+                    "widget_id": {
+                        "description": "The ID of the loop widget.",
+                        "type": "string",
+                        "required": true
+                    },
+                    "widget_model": {
+                        "description": "The model of the loop widget. In Editor mode only.",
+                        "type": "object",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor-pro/v1/refresh-search"
+                }]
+            }
+        },
+        "/elementor/v1/notes": {
+            "namespace": "elementor/v1",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "route_url": {
+                        "type": "string",
+                        "description": "The URL of the route where the note was created at.",
+                        "required": false
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The note status (e.g. \"publish\", \"draft\").",
+                        "enum": ["publish", "draft"],
+                        "default": "publish",
+                        "required": false
+                    },
+                    "is_resolved": {
+                        "type": "boolean",
+                        "description": "Whether the note is resolved or not.",
+                        "required": false
+                    },
+                    "only_relevant": {
+                        "type": "boolean",
+                        "description": "Show only notes that are relevant to the current user.",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/notes"
+                }]
+            }
+        },
+        "/elementor/v1/notes/read-status": {
+            "namespace": "elementor/v1",
+            "methods": ["POST", "DELETE"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "ids": {
+                        "type": "array",
+                        "description": "The id's of the notes.",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "ids": {
+                        "type": "array",
+                        "description": "The id's of the notes.",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/notes/read-status"
+                }]
+            }
+        },
+        "/elementor/v1/notes/summary": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "route_url": {
+                        "type": "string",
+                        "description": "The URL of the route where the note was created at.",
+                        "required": false
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The note status (e.g. \"publish\", \"draft\").",
+                        "enum": ["publish", "draft"],
+                        "default": "publish",
+                        "required": false
+                    },
+                    "is_resolved": {
+                        "type": "boolean",
+                        "description": "Whether the note is resolved or not.",
+                        "required": false
+                    },
+                    "only_relevant": {
+                        "type": "boolean",
+                        "description": "Show only notes that are relevant to the current user.",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/notes/summary"
+                }]
+            }
+        },
+        "/elementor/v1/notes/users": {
+            "namespace": "elementor/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "limit": {
+                        "type": "integer",
+                        "description": "Limit the results.",
+                        "required": false
+                    },
+                    "order_by": {
+                        "type": "string",
+                        "description": "A column to order the results by.",
+                        "default": "display_name",
+                        "enum": ["user_nicename", "display_name", "user_registered"],
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/elementor/v1/notes/users"
+                }]
+            }
+        },
+        "/elementor/v1/notes/(?P<id>[\\d]+)": {
+            "namespace": "elementor/v1",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Note ID to find.",
+                        "required": true
+                    }
+                }
+            }, {
+                "methods": ["POST", "PUT", "PATCH"],
+                "args": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The id the note.",
+                        "required": true
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "The content of the note.",
+                        "required": false
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Note status can be draft or publish.",
+                        "enum": ["publish", "draft"],
+                        "required": false
+                    },
+                    "is_resolved": {
+                        "type": "boolean",
+                        "description": "Is this note resolved and should be hidden.",
+                        "required": false
+                    }
+                }
+            }, {
+                "methods": ["DELETE"],
+                "args": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The id of the note.",
+                        "required": true
+                    },
+                    "force": {
+                        "type": "boolean",
+                        "description": "Determine if it should be deleted permanently or change the status to trash.",
+                        "default": false,
+                        "required": false
+                    }
+                }
+            }]
+        },
+        "/ivole/v1": {
+            "namespace": "ivole/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "namespace": {
+                        "default": "ivole/v1",
+                        "required": false
+                    },
+                    "context": {
+                        "default": "view",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/ivole/v1"
+                }]
+            }
+        },
+        "/ivole/v1/review": {
+            "namespace": "ivole/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/ivole/v1/review"
+                }]
+            }
+        },
+        "/ivole/v1/review-reply": {
+            "namespace": "ivole/v1",
+            "methods": ["POST", "PATCH"],
+            "endpoints": [{
+                "methods": ["POST", "PATCH"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/ivole/v1/review-reply"
+                }]
+            }
+        },
+        "/otter/v1": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "namespace": {
+                        "default": "otter/v1",
+                        "required": false
+                    },
+                    "context": {
+                        "default": "view",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1"
+                }]
+            }
+        },
+        "/otter/v1/post_styles/(?P<id>\\d+)": {
+            "namespace": "otter/v1",
+            "methods": ["POST", "PUT", "PATCH"],
+            "endpoints": [{
+                "methods": ["POST", "PUT", "PATCH"],
+                "args": {
+                    "id": {
+                        "type": "integer",
+                        "description": "ID of the Post.",
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/otter/v1/block_styles/(?P<id>\\d+)": {
+            "namespace": "otter/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "id": {
+                        "type": "integer",
+                        "description": "ID of the Block.",
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/otter/v1/widget_styles": {
+            "namespace": "otter/v1",
+            "methods": ["POST", "PUT", "PATCH"],
+            "endpoints": [{
+                "methods": ["POST", "PUT", "PATCH"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/widget_styles"
+                }]
+            }
+        },
+        "/otter/v1/regenerate": {
+            "namespace": "otter/v1",
+            "methods": ["DELETE"],
+            "endpoints": [{
+                "methods": ["DELETE"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/regenerate"
+                }]
+            }
+        },
+        "/otter/v1/dynamic": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "type": {
+                        "type": "string",
+                        "description": "Image type.",
+                        "required": true
+                    },
+                    "uid": {
+                        "type": "integer",
+                        "description": "Unique ID.",
+                        "required": true
+                    },
+                    "context": {
+                        "type": ["string", "integer"],
+                        "description": "ID of the post being edited.",
+                        "required": true
+                    },
+                    "id": {
+                        "type": "integer",
+                        "description": "ID of the Post that the image belongs.",
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/dynamic"
+                }]
+            }
+        },
+        "/otter/v1/dynamic/preview": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/dynamic/preview"
+                }]
+            }
+        },
+        "/otter/v1/stripe/products": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/stripe/products"
+                }]
+            }
+        },
+        "/otter/v1/stripe/prices/(?P<id>[a-zA-Z0-9-_]+)": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "id": {
+                        "type": "string",
+                        "description": "Product ID.",
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/otter/v1/onboarding/templates": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/onboarding/templates"
+                }]
+            }
+        },
+        "/otter/v1/form/frontend": {
+            "namespace": "otter/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/form/frontend"
+                }]
+            }
+        },
+        "/otter/v1/form/confirm": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "record_id": {
+                        "required": false
+                    },
+                    "session": {
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/form/confirm"
+                }]
+            }
+        },
+        "/otter/v1/form/editor": {
+            "namespace": "otter/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/form/editor"
+                }]
+            }
+        },
+        "/otter/v1/openai/key": {
+            "namespace": "otter/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/openai/key"
+                }]
+            }
+        },
+        "/otter/v1/openai/prompt": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/openai/prompt"
+                }]
+            }
+        },
+        "/otter/v1/openai/generate": {
+            "namespace": "otter/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/openai/generate"
+                }]
+            }
+        },
+        "/otter/v1/template-cloud/add-source": {
+            "namespace": "otter/v1",
+            "methods": ["POST"],
+            "endpoints": [{
+                "methods": ["POST"],
+                "args": {
+                    "key": {
+                        "required": true
+                    },
+                    "url": {
+                        "required": true
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/template-cloud/add-source"
+                }]
+            }
+        },
+        "/otter/v1/template-cloud/delete-source/(?P<key>[a-zA-Z0-9-_]+)": {
+            "namespace": "otter/v1",
+            "methods": ["DELETE"],
+            "endpoints": [{
+                "methods": ["DELETE"],
+                "args": {
+                    "key": {
+                        "required": true
+                    }
+                }
+            }]
+        },
+        "/otter/v1/template-cloud/sync": {
+            "namespace": "otter/v1",
+            "methods": ["GET"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": []
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/otter/v1/template-cloud/sync"
+                }]
+            }
+        },
+        "/wc/v1/coupons": {
+            "namespace": "wc/v1",
+            "methods": ["GET", "POST"],
+            "endpoints": [{
+                "methods": ["GET"],
+                "args": {
+                    "context": {
+                        "description": "Scope under which the request is made.",
+                        "type": "string",
+                        "enum": ["view", "edit"],
+                        "default": "view",
+                        "required": false
+                    },
+                    "page": {
+                        "description": "Current page of the collection.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "required": false
+                    },
+                    "per_page": {
+                        "description": "Maximum number of items to be returned in result set.",
+                        "type": "integer",
+                        "default": 10,
+                        "minimum": 1,
+                        "maximum": 100,
+                        "required": false
+                    },
+                    "search": {
+                        "description": "Limit results to those matching a string.",
+                        "type": "string",
+                        "required": false
+                    },
+                    "order": {
+                        "description": "Order sort attribute ascending or descending.",
+                        "type": "string",
+                        "default": "desc",
+                        "enum": ["asc", "desc"],
+                        "required": false
+                    },
+                    "orderby": {
+                        "description": "Sort collection by object attribute.",
+                        "type": "string",
+                        "default": "date",
+                        "enum": ["date", "id", "include", "title"],
+                        "required": false
+                    }
+                }
+            }],
+            "_links": {
+                "self": [{
+                    "href": "https://example.com/wp-json/wc/v1/coupons"
+                }]
+            }
+        }
+}

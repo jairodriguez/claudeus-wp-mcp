@@ -1,0 +1,85 @@
+# Smithery.ai configuration for Claudeus WordPress MCP
+name: "Claudeus WordPress MCP"
+description: "AI-powered WordPress management with MCP protocol support"
+version: "1.0.0"
+author:
+  name: "Amadeus Smaiel H."
+  email: "amadeus.hritani@simhop.se"
+organization:
+  name: "SimHop IT & Media AB"
+  website: "https://simhop.se"
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      WP_SITES_PATH:
+        type: string
+        description: "Path to WordPress sites configuration JSON file"
+        examples: ["/app/config/wp-sites.json"]
+      PORT:
+        type: number
+        description: "Port number for the MCP server (for health checks)"
+        default: 3000
+        minimum: 1024
+        maximum: 65535
+      NODE_ENV:
+        type: string
+        description: "Node environment (development/production)"
+        enum: ["development", "production"]
+        default: "production"
+      DEBUG:
+        type: string
+        description: "Debug configuration pattern"
+        default: "claudeus:*"
+        examples: ["claudeus:*", "claudeus:wp,claudeus:mcp"]
+      AUTH_TYPE:
+        type: string
+        description: "WordPress authentication type"
+        enum: ["basic", "jwt"]
+        default: "basic"
+      SSL_VERIFY:
+        type: boolean
+        description: "Verify SSL certificates for WordPress connections"
+        default: true
+    required: ["WP_SITES_PATH"]
+    additionalProperties: false
+
+  commandFunction: |-
+    (config) => {
+      const env = {
+        WP_SITES_PATH: config.WP_SITES_PATH,
+        PORT: config.PORT?.toString() || "3000",
+        NODE_ENV: config.NODE_ENV || "production",
+        DEBUG: config.DEBUG || "claudeus:*",
+        AUTH_TYPE: config.AUTH_TYPE || "basic",
+        SSL_VERIFY: config.SSL_VERIFY?.toString() || "true",
+        MCP_STDIO: "true"
+      };
+
+      return {
+        command: "node",
+        args: ["dist/index.js"],
+        env
+      };
+    }
+
+capabilities:
+  prompts:
+    listChanged: true
+  tools:
+    listChanged: true
+  resources:
+    listChanged: true
+
+security:
+  userConsent:
+    required: true
+    description: "This MCP server requires access to your WordPress sites and will perform content management operations."
+  dataAccess:
+    - type: "wordpress"
+      description: "Access to configured WordPress sites via REST API"
+  toolSafety:
+    confirmationRequired: true
+    description: "Tools can modify WordPress content and settings"

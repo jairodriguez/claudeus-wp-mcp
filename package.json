@@ -1,0 +1,51 @@
+{
+  "name": "claudeus-wp-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for WordPress integration",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "author": "SimHop IT & Media AB",
+  "homepage": "https://simhop.se",
+  "bugs": "https://github.com/deus-h/claudeus-wp-mcp/issues",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "claudeus-wp-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "postbuild": "chmod +x dist/inspector-wrapper.js && chmod +x dist/index.js",
+    "watch": "tsc -w",
+    "start": "node dist/index.js",
+    "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "clean": "rm -rf dist node_modules",
+    "inspector": "pnpx @modelcontextprotocol/inspector dist/inspector-wrapper.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.1.1",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "form-data": "^4.0.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.3.0",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.19.70",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^9.18.0",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^5.0.4"
+  }
+}

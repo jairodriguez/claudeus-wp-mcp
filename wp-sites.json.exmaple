@@ -1,0 +1,27 @@
+{
+	"live": {
+		"URL": "https://our-live-site.se",
+		"USER": "deus",
+		"PASS": "Kj9P mN2x vR4h Zt8L wQ5y Bc3M",
+		"authType": "basic"
+	},
+	"test": {
+		"URL": "https://our-test-site.se",
+		"USER": "deus",
+		"PASS": "Yw7H fT6n Jm5k Vd9x Pg4q Ls2B", 
+		"authType": "basic"
+	},
+	"client1_live": {
+		"URL": "https://client1-live-site.se",
+		"USER": "deus",
+		"PASS": "Xc8D bN4v Ht6m Rk2p Zj9w Qf5L",
+		"authType": "basic"
+	},
+	
+	"client1_test": {
+		"URL": "https://client1-test-site.se",
+		"USER": "deus",
+		"PASS": "Gm7B sW3x Yn5h Kt9q Vf4c Pd2L",
+		"authType": "basic"
+	}
+}
