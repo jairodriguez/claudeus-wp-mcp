@@ -43,6 +43,12 @@ RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 # Copy built files from builder
 COPY --chown=mcpuser:mcp --from=builder /build/dist ./dist
 
+# Copy and prepare configuration files
+COPY --chown=mcpuser:mcp wp-sites.json.exmaple /app/config/wp-sites.json.example
+COPY --chown=mcpuser:mcp .env.example /app/.env.example
+RUN cp /app/config/wp-sites.json.example /app/config/wp-sites.json && \
+    cp /app/.env.example /app/.env
+
 # Set environment variables
 ENV NODE_ENV=production \
     DEBUG=claudeus:* \
@@ -66,4 +72,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
 
 # Set entrypoint for stdio MCP server
-ENTRYPOINT ["node", "dist/index.js", "--config", "/app/config/wp-sites.json"] 
+ENTRYPOINT ["node", "dist/index.js"] 

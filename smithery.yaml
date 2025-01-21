@@ -1,7 +1,7 @@
 # Smithery.ai configuration for Claudeus WordPress MCP
 name: "Claudeus WordPress MCP"
 description: "AI-powered WordPress management with MCP protocol support"
-version: "2.0.2"
+version: "2.0.3"
 author:
   name: "Amadeus Samiel H."
   email: "amadeus.hritani@simhop.se"
@@ -17,7 +17,8 @@ startCommand:
       WP_SITES_PATH:
         type: string
         description: "Path to WordPress sites configuration JSON file"
-        examples: ["/app/config/wp-sites.json"]
+        default: "./wp-sites.json"
+        examples: ["./wp-sites.json", "/app/config/wp-sites.json"]
       PORT:
         type: number
         description: "Port number for the MCP server (for health checks)"
@@ -54,18 +55,32 @@ startCommand:
         default: 100
         minimum: 1
         maximum: 1000
-    required: ["WP_SITES_PATH"]
     additionalProperties: false
 
   commandFunction: |-
     (config) => {
+      // Ensure configuration files exist
+      const fs = require('fs');
+      const path = require('path');
+      
+      // Helper function to copy example if target doesn't exist
+      const copyExampleIfNeeded = (examplePath, targetPath) => {
+        if (!fs.existsSync(targetPath) && fs.existsSync(examplePath)) {
+          fs.copyFileSync(examplePath, targetPath);
+        }
+      };
+
+      // Copy example files if needed
+      copyExampleIfNeeded('wp-sites.json.example', 'wp-sites.json');
+      copyExampleIfNeeded('.env.example', '.env');
+
       const env = {
-        WP_SITES_PATH: config.WP_SITES_PATH,
+        WP_SITES_PATH: config.WP_SITES_PATH || "./wp-sites.json",
         PORT: config.PORT?.toString() || "3000",
         NODE_ENV: config.NODE_ENV || "production",
         DEBUG: config.DEBUG || "claudeus:*",
         AUTH_TYPE: config.AUTH_TYPE || "basic",
-        SSL_VERIFY: config.SSL_VERIFY?.toString() || "true",
+        SSL_VERIFY: (config.SSL_VERIFY ?? true).toString(),
         LOG_LEVEL: config.LOG_LEVEL || "info",
         BATCH_SIZE: config.BATCH_SIZE?.toString() || "100",
         MCP_STDIO: "true"
@@ -74,7 +89,8 @@ startCommand:
       return {
         command: "node",
         args: ["dist/index.js"],
-        env
+        env,
+        cwd: process.cwd()
       };
     }
 
