@@ -1,9 +1,9 @@
 # Smithery.ai configuration for Claudeus WordPress MCP
 name: "Claudeus WordPress MCP"
 description: "AI-powered WordPress management with MCP protocol support"
-version: "1.0.0"
+version: "2.0.2"
 author:
-  name: "Amadeus Smaiel H."
+  name: "Amadeus Samiel H."
   email: "amadeus.hritani@simhop.se"
 organization:
   name: "SimHop IT & Media AB"
@@ -36,13 +36,24 @@ startCommand:
         examples: ["claudeus:*", "claudeus:wp,claudeus:mcp"]
       AUTH_TYPE:
         type: string
-        description: "WordPress authentication type"
+        description: "Default WordPress authentication type"
         enum: ["basic", "jwt"]
         default: "basic"
       SSL_VERIFY:
         type: boolean
         description: "Verify SSL certificates for WordPress connections"
         default: true
+      LOG_LEVEL:
+        type: string
+        description: "Logging level"
+        enum: ["error", "warn", "info", "debug"]
+        default: "info"
+      BATCH_SIZE:
+        type: number
+        description: "Maximum number of items to process in a batch"
+        default: 100
+        minimum: 1
+        maximum: 1000
     required: ["WP_SITES_PATH"]
     additionalProperties: false
 
@@ -55,6 +66,8 @@ startCommand:
         DEBUG: config.DEBUG || "claudeus:*",
         AUTH_TYPE: config.AUTH_TYPE || "basic",
         SSL_VERIFY: config.SSL_VERIFY?.toString() || "true",
+        LOG_LEVEL: config.LOG_LEVEL || "info",
+        BATCH_SIZE: config.BATCH_SIZE?.toString() || "100",
         MCP_STDIO: "true"
       };
 
@@ -80,6 +93,14 @@ security:
   dataAccess:
     - type: "wordpress"
       description: "Access to configured WordPress sites via REST API"
+    - type: "filesystem"
+      description: "Access to wp-sites.json configuration file"
   toolSafety:
     confirmationRequired: true
     description: "Tools can modify WordPress content and settings"
+    dangerousOperations:
+      - "delete_post"
+      - "delete_page"
+      - "delete_block"
+      - "delete_media"
+      - "activate_theme"
