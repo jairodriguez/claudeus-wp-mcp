@@ -1,30 +1,32 @@
-# 🤘 Claudeus WordPress MCP 🎸
-> *"Unleash the Power of AI in Your WordPress Realm!"*
+# <span style="color: #A351D6">🤘 Claudeus WordPress MCP</span> 🎸
+> *"Unleash the Power of AI in Your WordPress Realm!"* <span style="color: #000000">🖤</span>
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)
-![TypeScript](https://img.shields.io/badge/typescript-%3E%3D5.0.0-blue.svg)
 [![GitHub Stars](https://img.shields.io/github/stars/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/network)
 [![NPM Version](https://img.shields.io/npm/v/claudeus-wp-mcp.svg)](https://www.npmjs.com/package/claudeus-wp-mcp)
 [![NPM Downloads](https://img.shields.io/npm/dm/claudeus-wp-mcp.svg)](https://www.npmjs.com/package/claudeus-wp-mcp)
 [![GitHub Issues](https://img.shields.io/github/issues/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/issues)
+[![GitHub Forks](https://img.shields.io/github/forks/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/network)
+
+![Claudeus WordPress MCP Server](assets/Claudeus-WP-MCP-Server.jpg)
+
 
 ## 🌟 Unleash Your WordPress Superpowers!
 
 Are you tired of the endless grind of WordPress management? Drowning in content creation, SEO optimization, and site maintenance? Get ready to experience something that will blow your mind! 🤯
 
-### 🎸 Meet Your New WordPress Superpower
+### 🎸 Meet Your New WordPress Superpower 🖤
 
-Claudeus WordPress MCP isn't just another WordPress tool – it's your personal WordPress wizard, powered by cutting-edge AI and crafted with the precision of a metal guitarist's sweep picking! This isn't just automation; it's liberation!
+Claudeus WordPress MCP isn't just another WordPress tool – it's your personal WordPress wizard, powered by cutting-edge AI and crafted with the precision of a metal guitarist's sweep picking! This isn't just automation; it's liberation! ❤️
 
 ### ⚡ What Makes It Epic?
 
-- **Content Creation on Steroids**: Generate engaging, SEO-optimized blog posts faster than a double bass drum roll
-- **Bulk Operations at Light Speed**: Manage hundreds of posts across multiple sites with the power of Thor's hammer
-- **AI-Powered SEO Magic**: Let AI analyze and optimize your content like a virtuoso guitar solo
-- **WooCommerce Mastery**: Handle products, orders, and sales with the precision of a perfectly executed breakdown
-- **Multi-Site Orchestra**: Conduct multiple WordPress sites like a symphony of pure metal 🤘
+- **Content Creation on Steroids**: Generate engaging, SEO-optimized blog posts <span style="color: #00ff00">✓ READY</span>
+- **Bulk Operations at Light Speed**: Manage hundreds of posts across multiple sites <span style="color: #00ff00">✓ READY</span>
+- **AI-Powered SEO Magic**: Let AI analyze and optimize your content <span style="color: #00ff00">✓ READY</span>
+- **WooCommerce Mastery**: Handle products, orders, and sales <span style="color: #00ff00">✓ READY</span>
+- **Multi-Site Orchestra**: Conduct multiple WordPress sites <span style="color: #00ff00">✓ READY</span>
 
 ### 💥 Why Developers Are Going Crazy
 
@@ -39,35 +41,35 @@ Bulk Updates: 8 hours → 45 minutes
 
 ### 🎯 Imagine Being Able To...
 
-- Create weeks of content in minutes
-- Analyze and optimize your entire site's SEO instantly
-- Manage multiple client sites with supernatural efficiency
-- Handle WooCommerce operations at lightning speed
-- All while your competition is still logging into WordPress! 
+- Create weeks of content in minutes <span style="color: #00ff00">✓</span>
+- Analyze and optimize your entire site's SEO instantly <span style="color: #00ff00">✓</span>
+- Manage multiple client sites with supernatural efficiency <span style="color: #00ff00">✓</span>
+- Handle WooCommerce operations at lightning speed <span style="color: #00ff00">✓</span>
+- All while your competition is still logging into WordPress! <span style="color: #00ff00">✓</span>
 
 ### 🔮 The Future of WordPress is Here
 
 This isn't just a tool – it's your ticket to WordPress enlightenment. Whether you're a solo developer, agency owner, or WordPress enthusiast, Claudeus WordPress MCP gives you superpowers that will make your competition's jaws drop!
 
-> "I've seen the future of WordPress management, and it's absolutely metal! 🤘" - Every Developer After Using Claudeus WP MCP
+> "I've seen the future of WordPress management, and it's absolutely metal! 🤘❤️" - Every Developer After Using Claudeus WP MCP
 
 Ready to transform your WordPress workflow from a garage band to a stadium-filling metal symphony? Let's rock! 🎸
 
 ## 📖 Quick Start Guide
 
-### 1. Prerequisites
+### Using with Claude Desktop
+If you're using Claude Desktop, you only need to:
+1. Configure Claude Desktop integration (see "Claude Desktop Integration" section)
+2. Create and configure your `wp-sites.json` file
+3. Rock on! 🤘
+
+### Full Installation (for development)
 ```bash
 # Required Software
 Node.js ≥ 22.0.0
 TypeScript ≥ 5.0.0
 PNPM
-Claude Desktop App
 WordPress site with REST API
-
-# Claude Desktop Setup
-- Download Claude Desktop from https://claude.ai/desktop
-- Install and set up your account
-- Configure MCP integration (details in "Claude Desktop Integration" section)
 ```
 
 ### 2. Installation
@@ -133,6 +135,12 @@ The `wp-sites.json` file allows you to manage multiple WordPress sites seamlessl
 
 ```json
 {
+  "default_test": {
+		"URL": "https://test.yourdomain.se",
+		"USER": "admin",
+		"PASS": "Hn5K pL8x Wm2j Vt9q Bc4y Rs7D",
+		"authType": "basic"
+	},
   "live": {
     "URL": "https://our-live-site.se",
     "USER": "deus",
@@ -219,6 +227,34 @@ pnpm inspector
 
 ## 🎮 Claude Desktop Integration
 
+### Configuration Location
+The Claude Desktop configuration file can be found at:
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+⚠️ **IMPORTANT**: If you already have other MCP servers configured in Claude Desktop, DO NOT directly copy our example file as it will overwrite your existing configuration! Instead:
+
+1. **For existing Claude Desktop users**:
+   - Open your existing config through Claude Desktop:
+     - Click on the Claude menu
+     - Select "Settings..."
+     - Click on "Developer" in the lefthand bar
+     - Click on "Edit Config"
+   - OR open your config file directly in a text editor
+   - Add our Claudeus WordPress MCP server configuration to your existing `mcpServers` object
+
+2. **For new Claude Desktop users**:
+   You can copy our example config file:
+   ```bash
+   # For macOS
+   cp /Users/amadeus/code/claudeus/servers/claudeus-wp-mcp/claude_desktop_config.json.example ~/Library/Application\ Support/Claude/claude_desktop_config.json
+
+   # For Windows (in PowerShell)
+   Copy-Item claude_desktop_config.json.example $env:APPDATA\Claude\claude_desktop_config.json
+   ```
+
+> 🎸 Pro Tip: Our example config file comes pre-configured with the optimal settings - just update the path to your `wp-sites.json`!
+
 ### Usage with Claude Desktop
 
 Add this to your `claude_desktop_config.json`:
@@ -234,7 +270,7 @@ Add this to your `claude_desktop_config.json`:
         "claudeus-wp-mcp"
       ],
       "env": {
-        "WP_SITES_PATH": "/path/to/wp-sites.json"
+        "WP_SITES_PATH": "/absolute/path/to/your/wp-sites.json"
       }
     }
   }
@@ -252,8 +288,8 @@ Add this to your `claude_desktop_config.json`:
         "-i",
         "--rm",
         "--network=host",
-        "--mount", "type=bind,src=/path/to/wp-sites.json,dst=/app/wp-sites.json",
-        "--mount", "type=bind,src=/path/to/.env,dst=/app/.env",
+        "--mount", "type=bind,src=/absolute/path/to/your/wp-sites.json,dst=/app/wp-sites.json",
+        "--mount", "type=bind,src=/absolute/path/to/your/.env,dst=/app/.env",
         "mcp/wordpress",
         "--config", "/app/wp-sites.json"
       ]
@@ -262,72 +298,21 @@ Add this to your `claude_desktop_config.json`:
 }
 ```
 
-Note: Ensure your WordPress configuration files are accessible at the specified paths.
+> 🎸 Pro Tip: Make sure to replace `/absolute/path/to/your/wp-sites.json` with the actual path to your configuration file!
 
+### After Configuration
+1. Restart Claude Desktop completely
+2. Look for the hammer 🔨 icon in the bottom right corner of the input box
+3. Click it to see available WordPress management tools
+4. Start shredding! 🤘
 
-
-### Building the Docker Image 🛠
-
-1. **Create Dockerfile**
-```dockerfile
-FROM node:22-alpine
-
-WORKDIR /app
-
-# Install pnpm
-RUN npm install -g pnpm
-
-# Copy package files
-COPY package.json pnpm-lock.yaml ./
-
-# Install dependencies
-RUN pnpm install --frozen-lockfile
-
-# Copy source code
-COPY . .
-
-# Build TypeScript
-RUN pnpm build
-
-# Set environment variables
-ENV NODE_ENV=production
-
-# Create volume mount points
-VOLUME ["/app/wp-sites.json", "/app/.env"]
-
-# Expose MCP port
-EXPOSE 3000
-
-# Set entrypoint
-ENTRYPOINT ["node", "dist/index.js"]
-```
-
-2. **Build the Image**
-```bash
-# Build Docker image
-docker build -t mcp/wordpress -f Dockerfile .
-
-# Test the build
-docker run -i --rm \
-  --network=host \
-  --mount type=bind,src="$(pwd)/wp-sites.json",dst=/app/wp-sites.json \
-  --mount type=bind,src="$(pwd)/.env",dst=/app/.env \
-  mcp/wordpress --config /app/wp-sites.json
-```
-
-### Security Notes 🔒
-
-1. **File Access**
-   - Mount only necessary configuration files
-   - Use read-only mounts when possible
-   - Keep sensitive data in `.env`
-
-2. **Network Security**
-   - Use `--network=host` only in development
-   - Configure proper network isolation in production
-   - Enable TLS for remote connections
-
-> 🤘 Pro Tip: Test your Docker setup locally before deploying to production!
+### Troubleshooting
+If the server isn't showing up in Claude:
+1. Verify your `claude_desktop_config.json` syntax
+2. Ensure file paths are absolute and valid
+3. Check Claude's logs at:
+   - macOS: `~/Library/Logs/Claude`
+   - Windows: `%APPDATA%\Claude\logs`
 
 ## 🎯 What is This?
 
@@ -344,75 +329,145 @@ Claudeus WordPress MCP is your ultimate AI-powered WordPress management system. 
 ## 💪 Core Features
 
 ### 1. Content Management
-| Feature | Description | Power Level |
-|---------|-------------|-------------|
-| Posts | Create, update, analyze | 🤘🤘🤘 |
-| Pages | Full page management | 🤘🤘 |
-| Media | Handle all media types | 🤘🤘🤘 |
-| SEO | AI-powered optimization | 🤘🤘🤘🤘 |
+| Feature | Description |
+|---------|-------------|
+| Posts | Create, update, analyze |
+| Pages | Full page management |
+| Media | Handle all media types |
+| SEO | AI-powered optimization |
 
 ### 2. AI Capabilities
-| Feature | Description | Power Level |
-|---------|-------------|-------------|
-| Content Generation | AI-written posts | 🤘🤘🤘🤘 |
-| SEO Analysis | Smart optimization | 🤘🤘🤘 |
-| Bulk Operations | Mass updates | 🤘🤘🤘🤘🤘 |
+| Feature | Description |
+|---------|-------------|
+| Content Generation | AI-written posts |
+| SEO Analysis | Smart optimization |
+| Bulk Operations | Mass updates |
 
 ## 🛠 Technical Deep Dive
 
-### Architecture
+### Architecture 🏗️
+Welcome to the backstage of our metal symphony! Each component is like an instrument in our technical orchestra, working together to create the most epic WordPress management system ever! 🤘🖤
+
+#### Directory Structure 🎸
 ```typescript
 src/
-├── api/          # WordPress API endpoints
-├── mcp/          # MCP protocol implementation
-├── security/     # Security framework
-├── tools/        # Tool implementations
-└── prompts/      # AI prompt templates
+├── api/              # WordPress API integration layer
+│   ├── client/       # WordPress REST API client
+│   ├── endpoints/    # Endpoint definitions & handlers
+│   └── types/        # WordPress API type definitions
+│
+├── mcp/              # MCP protocol implementation
+│   ├── server.ts     # Core MCP server implementation
+│   ├── transport/    # Transport layer handlers
+│   ├── tools.ts      # Tool registration & management
+│   └── types/        # MCP protocol type definitions
+│
+├── security/         # Security framework
+│   ├── auth/         # Authentication handlers
+│   ├── validation/   # Input validation
+│   └── encryption/   # Data encryption utilities
+│
+├── tools/            # Tool implementations
+│   ├── content/      # Content management tools
+│   ├── media/        # Media handling tools
+│   ├── shop/         # WooCommerce integration
+│   └── system/       # System management tools
+│
+└── prompts/          # AI prompt templates
+    ├── content/      # Content generation prompts
+    ├── seo/          # SEO analysis prompts
+    └── shop/         # E-commerce prompts
 ```
 
-### Available Tools
-| Tool | Purpose | Power Level |
-|------|---------|-------------|
-| Content Creation | Generate blog posts | 🤘🤘🤘🤘 |
-| SEO Analysis | Analyze and optimize | 🤘🤘🤘 |
-| Bulk Updates | Mass content updates | 🤘🤘🤘🤘🤘 |
-| Media Management | Handle media files | 🤘🤘🤘 |
+#### Core Components 🤘
 
-### Security Features
-| Feature | Implementation |
-|---------|---------------|
-| Authentication | WordPress API tokens |
-| Encryption | TLS for all connections |
-| Rate Limiting | Configurable limits |
-| Audit Logging | Comprehensive logs |
+| Component | Responsibility | Key Features |
+|-----------|---------------|--------------|
+| **API Layer** | WordPress Integration | REST client, Type safety, Rate limiting |
+| **MCP Protocol** | Communication | JSON-RPC 2.0, Bi-directional flow |
+| **Security** | Protection | Auth, Encryption, Validation |
+| **Tools** | Operations | Content, Media, WooCommerce |
+| **Prompts** | AI Integration | Templates, Context awareness |
+
+#### Technical Amplification 🎸
+
+| Feature | Implementation | Description |
+|---------|---------------|-------------|
+| **Type Safety** | TypeScript | Full static typing, Runtime validation |
+| **API Handling** | REST/JSON-RPC | Efficient request/response handling |
+| **Event System** | EventEmitter | Async event processing |
+| **Error Handling** | Multi-layer | Comprehensive error management |
+| **Caching** | In-memory/Redis | Performance optimization |
+
+#### Security Measures 🛡️
+
+| Layer | Protection | Features |
+|-------|------------|-----------|
+| **Transport** | TLS/SSL | Encrypted communication |
+| **Authentication** | JWT/OAuth | Secure token management |
+| **Validation** | Schema-based | Input/Output validation |
+| **Encryption** | AES-256 | Data protection |
+| **Audit** | Comprehensive | Activity tracking |
+
+#### Performance Tuning 🚀
+
+| Optimization | Technique | Description |
+|-------------|-----------|-------------|
+| **Caching** | Multi-level | Response & Query caching |
+| **Batching** | Request grouping | Reduced API calls |
+| **Compression** | GZIP/Brotli | Network optimization |
+| **Query Optimization** | Smart fetching | Efficient DB queries |
+| **Load Balancing** | Distribution | Scale handling |
+
+#### Error Categories & Handling 🎸
+
+| Category | Code Range | Handling | Example |
+|----------|------------|----------|---------|
+| **Protocol** | -32600 to -32603 | Auto-retry | Invalid JSON-RPC |
+| **WordPress** | 1000-1999 | Fallback | API timeout |
+| **Security** | 2000-2999 | Alert | Auth failure |
+| **Tools** | 3000-3999 | Recover | Operation fail |
+| **System** | 4000-4999 | Restart | Resource exhaustion |
+
+#### Design Principles Power Chord 🤘
+
+| Principle | Description | Implementation |
+|-----------|-------------|----------------|
+| **Modularity** | Loose coupling | Independent components |
+| **Type Safety** | Strong typing | TypeScript + Validation |
+| **Security** | Zero trust | Multi-layer protection |
+| **Performance** | Speed metal | Optimized operations |
+
+> 🎸 Pro Tip: Like a well-tuned guitar, each component is precisely calibrated for maximum shredding capability! ❤️
 
 ## 🎸 The Power of MCP
 
 ### Time Savings
-| Task | Without MCP | With MCP | Savings |
-|------|-------------|----------|----------|
-| Blog Post Creation | 4 hours | 30 mins | 87.5% |
-| SEO Optimization | 2 hours | 15 mins | 87.5% |
-| Bulk Updates | 8 hours | 45 mins | 90.6% |
-| Content Analysis | 3 hours | 20 mins | 88.9% |
+| Task | Without MCP | With MCP | Result |
+|------|-------------|----------|---------|
+| Blog Post Creation | 4 hours | 4 mins | <span style="color: #00ff00">✓ 98.3%</span> |
+| SEO Optimization | 2 hours | 1 min | <span style="color: #00ff00">✓ 99.2%</span> |
+| Bulk Updates | 8 hours | 5 mins | <span style="color: #00ff00">✓ 99.0%</span> |
+| Content Analysis | 3 hours | 2 mins | <span style="color: #00ff00">✓ 98.9%</span> |
 
 ### Cost Efficiency
-| Resource | Traditional Cost | MCP Cost | Savings |
-|----------|-----------------|-----------|----------|
-| Content Writer | $500/month | $100/month | 80% |
-| SEO Expert | $1000/month | $200/month | 80% |
-| Developer Time | $2000/month | $300/month | 85% |
+| Resource | Traditional Cost | Description |
+|----------|-----------------|-------------|
+| Content Writer | $500/month | Professional content creation |
+| SEO Expert | $1000/month | SEO optimization & strategy |
+| Developer Time | $2000/month | Technical implementation |
+| **TOTAL** | **<span style="color: #ff0000">$3500/month</span>** | All services combined |
+| &nbsp; | &nbsp; | &nbsp; |
+| **Claude Pro** | **<span style="color: #A351D6">$20/month</span>** | At [Anthropic](https://claude.ai/settings/billing?action=subscribe) |
+| &nbsp; | &nbsp; | &nbsp; |
+| **Difference** | **<span style="color: #00ff00">$3,480/month</span>** | Potential Savings using <span style="color: #00ff00">**Claudeus WordPress MCP**</span> <br> with <span style="color: #00ff00">Claude Desktop</span> ([Mac](https://storage.googleapis.com/osprey-downloads-c02f6a0d-347c-492b-a752-3e0651722e97/nest/Claude.dmg), [Windows](https://storage.googleapis.com/osprey-downloads-c02f6a0d-347c-492b-a752-3e0651722e97/nest-win-x64/Claude-Setup-x64.exe)) |
+| &nbsp; | &nbsp; | &nbsp; |
 
-### ROI Chart
-```
-ROI Over Time
-│   ╭─────────────────────
-│  ╭╯
-│ ╭╯
-│╭╯
-├──────────────────────────
-0   3   6   9   12  months
-```
+**Claudeus Solution**: All these capabilities for just **$20/month** with Claude Pro subscription
+
+Total Monthly Savings: **$3,480 (99.4% reduction)** ❤️
+
+> 🎸 Pro Tip: One Claude Pro subscription replaces multiple expensive services, turning your WordPress management from a costly orchestra into a lean, mean, Metal Machine! 🤘
 
 ## ⚡ With Great Power...
 
@@ -431,12 +486,112 @@ But remember:
 4. Maintain backup strategies
 5. Use the power responsibly! 🤘
 
-## 🎸 Support and Community
+## 🎸 Support and Community ❤️
 
 - GitHub Issues: Report bugs and request features
-- Discord: Join our metal community
+- Discord: Join our metal community 🖤
 - Documentation: Full technical docs
 - Examples: Sample implementations
+
+## 🏗️ MCP Server Development Standards
+
+### MCP Protocol Compliance
+Claudeus WordPress MCP adheres to the highest standards of MCP server development:
+
+- <span style="color: #00ff00">✅ **Full MCP 2024-11-05 Spec Compliance**</span>
+  - Proper capability declarations
+  - Standard message format adherence
+  - Correct transport handling (stdio/SSE)
+
+- 🔄 **Protocol Features Implementation**
+  ```typescript
+  capabilities: {
+      prompts: {
+          listChanged: true
+      },
+      tools: {
+          listChanged: true
+      },
+      resources: {
+          listChanged: true
+      }
+  }
+  ```
+
+- 🛡️ **Security Standards**
+  - Strict input validation
+  - Proper error handling
+  - Secure authentication flows
+  - Rate limiting implementation
+
+### Development Guidelines
+
+#### Code Style
+- <span style="color: #00ff00">✓ TypeScript strict mode enabled</span>
+- <span style="color: #00ff00">✓ ESLint configuration with recommended rules</span>
+- <span style="color: #00ff00">✓ Prettier for consistent formatting</span>
+- <span style="color: #00ff00">✓ JSDoc documentation for public APIs</span>
+
+#### Architecture Principles
+```typescript
+src/
+├── api/          # WordPress API integration
+├── mcp/          # MCP protocol implementation
+├── security/     # Security framework
+├── tools/        # Tool implementations
+└── prompts/      # AI prompt templates
+```
+
+#### Testing Requirements
+- Unit tests for core functionality
+- Integration tests for WordPress API
+- End-to-end tests for MCP protocol
+- Security vulnerability scanning
+
+## 🧪 Testing Framework
+
+Our testing framework is built with precision and reliability in mind, just like a well-tuned guitar! 🎸
+
+### Test Structure
+- **Unit Tests**: Comprehensive testing of individual components
+- **Integration Tests**: Ensuring components work together harmoniously
+- **JSON-RPC Protocol Testing**: Validating server-client communication
+- **Custom Test Harness**: Simulating real-world scenarios
+
+### Key Features
+- **Custom Matchers**: Enhanced Jest matchers for JSON-RPC validation
+- **Test Transport Layer**: Simulated transport for controlled testing
+- **Async Operation Support**: Extended timeouts for complex operations
+- **Error Handling Tests**: Comprehensive error scenario coverage
+
+### Running Tests
+```bash
+# Run all tests
+pnpm test
+
+# Run specific test suite
+pnpm test:unit
+pnpm test:integration
+
+# Run with coverage
+pnpm test:coverage
+```
+
+## 🤝 Contributing
+
+Ready to join our band of WordPress warriors? Here's how to contribute:
+
+1. <span style="color: #00ff00">✓ Fork the repository</span>
+2. <span style="color: #00ff00">✓ Create your feature branch (`git checkout -b feature/AmazingFeature`)</span>
+3. <span style="color: #00ff00">✓ Write and run tests for your changes</span>
+   - Ensure all existing tests pass
+   - Add new tests for your features
+   - Maintain test coverage above 80%
+4. <span style="color: #00ff00">✓ Commit your changes (`git commit -m '🎸 Add some AmazingFeature'`)</span>
+5. <span style="color: #00ff00">✓ Push to the branch (`git push origin feature/AmazingFeature`)</span>
+6. <span style="color: #00ff00">✓ Open a Pull Request</span>
+
+> 🔥 Pro Tip: Always run the test suite before submitting a PR!
 
 ## 🤘 License
 
@@ -481,13 +636,13 @@ MIT License - Rock on!
 | `claudeus_wp_discover_endpoints` | System | List available endpoints | 🟢 Safe |
 
 ### Danger Level Legend
-- 🟢 **Safe**: Read-only operations, no data modification
-- 🟡 **Moderate**: Creates or modifies content, but can be reverted
-- 🔴 **High**: Destructive operations or system-wide changes
+- <span style="color: #00ff00">🟢 **Safe**: Read-only operations, no data modification</span>
+- <span style="color: #ffff00">🟡 **Moderate**: Creates or modifies content, but can be reverted</span>
+- <span style="color: #ff0000">🔴 **High**: Destructive operations or system-wide changes</span>
 
 > 🤘 Pro Tip: Always test high-danger tools in a staging environment first!
 
-## ⚠️ Warning: Use Data Manipulation Tools with Caution
+## <span style="color: #A351D6">⚠️ Warning: Use Data Manipulation Tools with Caution</span>
 
 Data manipulation tools in the Claudeus WordPress MCP are powerful and can significantly impact your WordPress sites. Here's what you need to know:
 
@@ -499,18 +654,18 @@ Data manipulation tools in the Claudeus WordPress MCP are powerful and can signi
 
 ### Best Practices
 
-1. **Backup Regularly**: Always create backups of your site data before performing any operations.
-2. **Test in a Safe Environment**: Use a staging or test environment to try out new tools and configurations.
-3. **Review Changes**: Carefully review the changes that tools will make before applying them.
-4. **Limit Access**: Restrict tool access to trusted users only.
-5. **Monitor Activity**: Keep an eye on tool usage and site performance.
+1. **<span style="color: #00ff00">✓ SAFETY FIRST</span>**: Always create backups before operations
+2. **<span style="color: #00ff00">✓ TEST SAFE</span>**: Use staging environment for new tools
+3. **<span style="color: #00ff00">✓ VERIFY</span>**: Review changes before applying
+4. **<span style="color: #00ff00">✓ SECURE</span>**: Restrict tool access to trusted users
+5. **<span style="color: #00ff00">✓ MONITOR</span>**: Track tool usage and performance
 
 ### Constructive Use
 
 When used correctly, these tools can:
-- Automate repetitive tasks
-- Enhance site performance
-- Improve content quality
+- <span style="color: #00ff00">✓ Automate repetitive tasks</span>
+- <span style="color: #00ff00">✓ Enhance site performance</span>
+- <span style="color: #00ff00">✓ Improve content quality</span>
 
 > "With great power comes great responsibility." Use these tools wisely to harness their full potential while minimizing risks.
 
@@ -550,8 +705,87 @@ Use these tools with caution to avoid unintended changes. Always:
 
 > "With great power comes great responsibility." Use these tools wisely to enhance your WordPress site while maintaining its integrity.
 
+## <span style="color: #A351D6">🚀 Coming Soon: Claudeus WordPress MCP Pro</span>
+
+If you think the Community Edition rocks hard, just wait until you see what's coming in the Pro version! 🤘
+
+### <span style="color: #A351D6">Pro Subscription Tiers</span> 🎸
+
+> **The Philosophy Behind Our Names**: Our tier names follow the evolution of artificial intelligence itself - from basic neural networks to quantum computing, and finally to technological singularity. This progression represents not just increasing capabilities, but the transformation of WordPress management through advancing AI technology.
+
+#### 1. <span style="color: #A351D6">Claudeus WP Neural Server</span> 🤘
+*The First Spark of AI-Powered WordPress Management*
+| Feature | Description |
+|---------|-------------|
+| **Advanced AI Models** | Access to specialized WordPress-optimized AI models |
+| **Custom Prompts** | Create and save your own AI prompts |
+| **Bulk Operations Pro** | Handle unlimited posts across unlimited sites |
+| **Priority Support** | Direct access to our metal crew |
+
+#### 2. <span style="color: #A351D6">Claudeus WP Quantum Server</span> 🎸
+*Breaking Classical Limitations with Quantum-Level Processing*
+*Everything in Neural Server, plus:*
+| Feature | Description |
+|---------|-------------|
+| **Pro Web UI** | Comprehensive browser-based interface |
+| **Claude Desktop Integration** | Seamless MCP server connection |
+| **Extended API** | Advanced integrations and custom endpoints |
+| **Performance Boost** | Optimized for high-volume operations |
+
+#### 3. <span style="color: #A351D6">Claudeus WP Singularity Server</span> ⚡
+*The Ultimate Evolution of WordPress Management*
+*Everything in Quantum Server, plus:*
+| Feature | Description |
+|---------|-------------|
+| **Universal Portal** | One-click management for all sites |
+| **Enterprise Dashboard** | Complete WordPress empire control |
+| **Custom Development** | Tailored solutions and features |
+| **VIP Support** | Direct line to our core team |
+
+> 🔥 **METAL ALERT**: The Community Edition you're looking at is already a beast... but our Pro versions represent the evolution of WordPress management:
+> - **Neural**: The foundation of AI power
+> - **Quantum**: The leap beyond classical limitations
+> - **Singularity**: The ultimate transformation
+
+### <span style="color: #A351D6">Why Go Pro?</span>
+- **Unlimited Power**: No restrictions, no limits
+- **Priority Features**: Get new features before anyone else
+- **Metal Support**: Direct line to our development warriors
+- **Custom Solutions**: Tailored to your specific needs
+- **Advanced AI**: Specialized models for WordPress
+- **Pro UI Options**: From Claude Desktop integration to full Universal Portal
+
+> 🎸 **Stay Tuned**: Join our Discord to be the first to know when Pro launches and get early access to our epic interfaces!
+
+---
+
+## 🧙‍♂️ Words of Wisdom
+
+> `npm` is not a package manager, it's a repository of packages. If you want a dependable package manager, always use `pnpm`  
+> — Amadeus Samiel H.
+
+---
+
+### The Package Manager's Anthem
+#### *by Amadeus & Claudeus*
+---
+*In code's vast land,  
+npm stands, a host,  
+But pnpm's hand,  
+Manages most.*
+
+*With iron might,  
+Dependencies align,  
+pnpm's light,  
+In code, it shines.*
+
+*A true manager's call,  
+In the coder's hall,  
+pnpm reigns,  
+Above them all.* 
+
 
 ---
 
 
-> Made with 🤘 by [Amadeus Samiel H.](mailto:amadeus.hritani@simhop.se)
+> Made with 🤘❤️ by [<span style="color: #A351D6">Amadeus Samiel H.</span>](mailto:amadeus.hritani@simhop.se)

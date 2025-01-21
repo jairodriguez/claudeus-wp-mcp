@@ -23,10 +23,14 @@ export interface PostFilters extends QueryParams {
     [key: string]: string | number | boolean | Array<string | number> | null | undefined;
 }
 
+// Input data for creating/updating posts
 export interface PostData extends Record<string, unknown> {
+    // These fields will be automatically wrapped in {raw: value} by the handler
     title: string;
     content: string;
     excerpt?: string;
+    
+    // Standard WordPress fields
     status?: 'publish' | 'future' | 'draft' | 'pending' | 'private';
     categories?: number[];
     tags?: number[];
@@ -39,7 +43,8 @@ export interface PostData extends Record<string, unknown> {
     template?: string;
 }
 
-export interface Post extends PostData {
+// WordPress API response format
+export interface Post {
     id: number;
     date: string;
     date_gmt: string;
@@ -50,6 +55,30 @@ export interface Post extends PostData {
     type: string;
     link: string;
     author: number;
+    title: {
+        raw?: string;
+        rendered: string;
+    };
+    content: {
+        raw?: string;
+        rendered: string;
+        protected?: boolean;
+    };
+    excerpt: {
+        raw?: string;
+        rendered: string;
+        protected?: boolean;
+    };
+    status: string;
+    categories?: number[];
+    tags?: number[];
+    featured_media?: number;
+    comment_status: 'open' | 'closed';
+    ping_status: 'open' | 'closed';
+    format: string;
+    meta: Record<string, any>;
+    sticky: boolean;
+    template: string;
     _links: Record<string, any>;
 }
 

@@ -13,7 +13,21 @@ export async function handleContentTools(name: string, args: Record<string, unkn
             };
         }
         case 'claudeus_wp_content__create_post': {
-            const post = await client.post<any>('/wp/v2/posts', args.data as PostData);
+            const data = args.data as PostData;
+            const formattedData = {
+                ...data,
+                title: {
+                    raw: data.title
+                },
+                content: {
+                    raw: data.content
+                },
+                excerpt: data.excerpt ? {
+                    raw: data.excerpt
+                } : undefined
+            };
+            
+            const post = await client.post<any>('/wp/v2/posts', formattedData);
             return {
                 content: [{
                     type: "text",
@@ -22,7 +36,21 @@ export async function handleContentTools(name: string, args: Record<string, unkn
             };
         }
         case 'claudeus_wp_content__update_post': {
-            const post = await client.put<any>(`/wp/v2/posts/${args.id}`, args.data as Partial<PostData>);
+            const data = args.data as Partial<PostData>;
+            const formattedData = {
+                ...data,
+                title: data.title ? {
+                    raw: data.title
+                } : undefined,
+                content: data.content ? {
+                    raw: data.content
+                } : undefined,
+                excerpt: data.excerpt ? {
+                    raw: data.excerpt
+                } : undefined
+            };
+            
+            const post = await client.put<any>(`/wp/v2/posts/${args.id}`, formattedData);
             return {
                 content: [{
                     type: "text",

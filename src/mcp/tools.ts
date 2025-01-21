@@ -11,6 +11,7 @@ import {
     Prompt,
     PromptMessage
 } from '@modelcontextprotocol/sdk/types.js';
+import { Tool, ListToolsResponse, CallToolResponse } from '../types/mcp.js';
 import { PostsApiClient } from '../api/posts.js';
 import { PagesApiClient } from '../api/pages.js';
 import { MediaApiClient } from '../api/media.js';
@@ -35,6 +36,7 @@ import {
 import axios from 'axios';
 import { prompts } from '../prompts/index.js';
 import { handlePrompts } from '../prompts/handlers.js';
+import { isToolAllowed } from '../utils/capabilities.js';
 
 function constructResourceUri(alias: string, baseUrl: string): string {
     return `wordpress://${alias}@${new URL(baseUrl).hostname}`;
@@ -120,7 +122,7 @@ export function registerTools(server: Server, clients: Map<string, {
     server.setRequestHandler(ListResourcesRequestSchema, async () => {
         const resources = Array.from(clients.entries()).map(([alias, client]) => ({
             id: alias,
-            name: `WordPress Site: ${alias}`,
+            name: `Alias: ${alias}`,
             type: "wordpress_site",
             uri: constructResourceUri(alias, client.posts.site.url),
             metadata: {
@@ -134,27 +136,76 @@ export function registerTools(server: Server, clients: Map<string, {
 
     // Register read resource handler
     server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
-        const resourceId = request.params?.id;
-        if (!resourceId || typeof resourceId !== 'string') {
-            throw new Error('Resource ID is required');
+        if (!request.params) {
+            throw {
+                code: -32602,
+                message: 'Resource URI is required'
+            };
         }
 
-        const client = clients.get(resourceId);
+        const uri = request.params.uri;
+        if (typeof uri !== 'string' || !uri) {
+            throw {
+                code: -32602,
+                message: 'Resource URI must be a non-empty string'
+            };
+        }
+
+        console.error(`🔍 Reading resource with URI: ${uri}`);
+
+        // Extract alias from wordpress://alias@hostname format
+        const match = uri.match(/^wordpress:\/\/([^@]+)@/);
+        if (!match) {
+            throw {
+                code: -32602,
+                message: `Invalid WordPress resource URI format: ${uri}`
+            };
+        }
+
+        const alias = match[1];
+        const client = clients.get(alias);
         if (!client) {
-            throw new Error(`Unknown site: ${resourceId}`);
+            throw {
+                code: -32602,
+                message: `Unknown site: ${alias}`
+            };
         }
 
         return {
             resource: {
-                id: resourceId,
-                name: `WordPress Site: ${resourceId}`,
+                id: alias,
+                name: `Alias: ${alias}`,
                 type: "wordpress_site",
-                uri: constructResourceUri(resourceId, client.posts.site.url),
+                uri: constructResourceUri(alias, client.posts.site.url),
                 metadata: {
                     url: client.posts.site.url,
-                    authType: client.posts.site.authType
+                    authType: client.posts.site.authType,
+                    capabilities: {
+                        posts: true,
+                        pages: true,
+                        media: true,
+                        blocks: true,
+                        themes: true,
+                        shop: Boolean(client.shop)
+                    }
                 }
-            }
+            },
+            contents: [{
+                type: 'text',
+                uri: constructResourceUri(alias, client.posts.site.url),
+                text: JSON.stringify({
+                    url: client.posts.site.url,
+                    authType: client.posts.site.authType,
+                    capabilities: {
+                        posts: true,
+                        pages: true,
+                        media: true,
+                        blocks: true,
+                        themes: true,
+                        shop: Boolean(client.shop)
+                    }
+                }, null, 2)
+            }]
         };
     });
 
@@ -162,13 +213,17 @@ export function registerTools(server: Server, clients: Map<string, {
     server.setRequestHandler(ListResourceTemplatesRequestSchema, async (request) => {
         const resourceId = request.params?.id;
         if (!resourceId || typeof resourceId !== 'string') {
+            console.error('No resource ID provided for templates');
             return { resourceTemplates: [] };
         }
 
         const client = clients.get(resourceId);
         if (!client) {
+            console.error(`Client not found for resource: ${resourceId}`);
             return { resourceTemplates: [] };
         }
+
+        console.error(`📋 Listing templates for resource: ${resourceId}`);
 
         return {
             resourceTemplates: [{
@@ -183,11 +238,22 @@ export function registerTools(server: Server, clients: Map<string, {
         };
     });
 
-    server.setRequestHandler(ListToolsRequestSchema, async () => ({
-        tools: [
+    server.setRequestHandler(ListToolsRequestSchema, async (request) => {
+        // Get the site from request params or use default
+        const site = (request.params?.site as string) || DEFAULT_SITE;
+        const client = clients.get(site);
+        
+        if (!client) {
+            throw new Error(`Unknown site: ${site}`);
+        }
+
+        const capabilities = client.posts.site.capabilities;
+
+        const tools = [
             {
                 name: 'claudeus_wp_discover_endpoints',
                 description: 'Discovers available REST API endpoints on a WordPress site.',
+                disabled: !isToolAllowed(capabilities, 'claudeus_wp_discover_endpoints'),
                 inputSchema: {
                     type: 'object',
                     required: [],
@@ -200,10 +266,14 @@ export function registerTools(server: Server, clients: Map<string, {
                     }
                 }
             },
-            ...shopTools,
+            ...shopTools.map(tool => ({
+                ...tool,
+                disabled: !isToolAllowed(capabilities, tool.name)
+            })),
             {
                 name: 'claudeus_wp_content__get_posts',
                 description: 'Get a list of posts with optional filters',
+                disabled: !isToolAllowed(capabilities, 'claudeus_wp_content__get_posts'),
                 inputSchema: {
                     type: 'object',
                     required: [],
@@ -224,6 +294,7 @@ export function registerTools(server: Server, clients: Map<string, {
             {
                 name: 'claudeus_wp_content__create_post',
                 description: 'Create a new post',
+                disabled: !isToolAllowed(capabilities, 'claudeus_wp_content__create_post'),
                 inputSchema: {
                     type: 'object',
                     required: ['data'],
@@ -291,6 +362,7 @@ export function registerTools(server: Server, clients: Map<string, {
             {
                 name: 'claudeus_wp_content__delete_post',
                 description: 'Delete a post',
+                disabled: !isToolAllowed(capabilities, 'claudeus_wp_content__delete_post'),
                 inputSchema: {
                     type: 'object',
                     properties: {
@@ -585,8 +657,20 @@ export function registerTools(server: Server, clients: Map<string, {
                     required: ['site', 'css']
                 }
             }
-        ]
-    }));
+        ];
+
+        // Map all tools with their disabled status but don't filter them out
+        const allTools = tools.map(tool => ({
+            ...tool,
+            disabled: !isToolAllowed(capabilities, tool.name),
+            // Add a note to the description if the tool is disabled
+            description: !isToolAllowed(capabilities, tool.name) 
+                ? `${tool.description} (Disabled for this site)`
+                : tool.description
+        }));
+
+        return { tools: allTools };
+    });
 
     // Register tool handlers
     server.setRequestHandler(CallToolRequestSchema, async (request) => {
@@ -601,9 +685,15 @@ export function registerTools(server: Server, clients: Map<string, {
         const site = args.site as string || DEFAULT_SITE;
         args.site = site;
 
+        // CRITICAL SECURITY CHECK: Check tool permissions BEFORE getting client or making any API calls
         const client = clients.get(site);
         if (!client) {
             throw new Error(`Unknown site: ${site}`);
+        }
+
+        // Check if tool is allowed for this site - MOVED TO TOP
+        if (!isToolAllowed(client.posts.site.capabilities, toolName)) {
+            throw new Error(`Tool ${toolName} is not allowed for site ${site}`);
         }
 
         // Handle shop tools
