@@ -23,11 +23,4 @@ jobs:
         run: pnpm install
         
       - name: Run tests
-        run: pnpm test
-        
-      - name: Upload coverage
-        uses: codecov/codecov-action@v4
-        if: always()
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true 
+        run: pnpm test 
