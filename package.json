@@ -1,6 +1,6 @@
 {
   "name": "claudeus-wp-mcp",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Model Context Protocol server for WordPress integration",
   "license": "MIT",
   "private": false,
