@@ -9,8 +9,59 @@
 [![GitHub Issues](https://img.shields.io/github/issues/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/issues)
 [![GitHub Forks](https://img.shields.io/github/forks/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/network)
 
-![Claudeus WordPress MCP Server](assets/Claudeus-WP-MCP-Server.jpg)
+![Claudeus WordPress MCP Server](https://raw.githubusercontent.com/deus-h/claudeus-wp-mcp/refs/heads/master/assets/Claudeus-WP-MCP-Server.jpg)
 
+
+## 🏢 The Team Behind the Magic
+
+### SimHop IT & Media AB - Where Innovation Meets Metal 🤘
+
+Based in the heart of Sweden, SimHop IT & Media AB is the powerhouse behind Claudeus WordPress MCP. We're not your typical tech company - we're a fusion of technical excellence and creative innovation, orchestrating digital solutions that rock! 
+
+#### 🎸 The Maestros
+
+**Amadeus Samiel H. (CTO/Lead Solutions Architect)**
+- MSc in Computer Science
+- 20+ years crafting digital excellence
+- Instructor at LIU and other institutes
+- The technical virtuoso behind Claudeus WP MCP
+- Specializations: System Architecture, Creative Development, Technical Education
+
+**Simon Malki (CEO)**
+- 20+ years orchestrating business success
+- Expert in strategic planning and market dynamics
+- The business mastermind driving SimHop's vision
+- Specializations: Business Strategy, Market Analysis, Technical Operations
+
+#### 🏗️ Our Dual-Power Structure
+
+**Stockholm HQ (Business & Strategy)**
+📍 Krögers Promenad 11, 191 37 Sollentuna
+- Strategic Operations
+- Business Development
+- Market Strategy
+- Client Relations
+
+**Norrköping Division (Technical Innovation)**
+📍 Klingsbergsgatan 13, 603 54 Norrköping
+- Development & Architecture
+- Technical Innovation
+- R&D Operations
+
+### 🤘 Why We Made It Free
+
+Claudeus WordPress MCP was born from our passion for both heavy metal and heavy-duty WordPress development. We believe in the power of open source and the spirit of the developer community. Just as metal music brings people together, we wanted to create a tool that would unite WordPress developers and make their lives easier.
+
+By open-sourcing Claudeus WP MCP, we're giving back to the community that has given us so much. It's our way of saying "thank you" and helping others achieve WordPress enlightenment! 🎸
+
+### 🔥 Our Philosophy
+
+1. **Technical Excellence**: Like a perfectly executed guitar solo
+2. **Creative Innovation**: Breaking boundaries, creating new possibilities
+3. **Community First**: Sharing the power with everyone
+4. **Continuous Evolution**: Always pushing the boundaries
+
+> "We believe in empowering developers with tools that rock as hard as they do!" - Amadeus & Simon
 
 ## 🌟 Unleash Your WordPress Superpowers!
 
@@ -486,10 +537,74 @@ But remember:
 4. Maintain backup strategies
 5. Use the power responsibly! 🤘
 
+## ⚠️ Issues and Considerations
+
+### Current Limitations and Workarounds
+
+#### 1. Claude Desktop Response Limits
+- **Issue**: Claude Desktop's maximum response length can be reached frequently during complex operations
+- **Impact**: Operations may be interrupted, requiring user intervention to continue
+- **Workaround**: 
+  - Configure Claude Desktop to break tasks into smaller batches
+  - In Claude Desktop Settings > Advanced:
+    - Set "Maximum Response Length" to a lower value
+    - Enable "Auto-split Responses"
+  - Use the Inspector UI for large-scale operations
+
+#### 2. Experimental Capabilities Control
+- **Issue**: The new capability control feature in `wp-sites.json` is experimental
+- **Status**: Integrated but under testing
+- **Example Configuration**:
+```json
+{
+    "capabilities": {
+        "discovery": {
+            "claudeus_wp_discover_endpoints": true
+        },
+        "posts": {
+            "claudeus_wp_content__get_posts": true,
+            "claudeus_wp_content__create_post": true,
+            "claudeus_wp_content__update_post": true,
+            "claudeus_wp_content__delete_post": false
+        }
+        // ... other capabilities
+    }
+}
+```
+- **Considerations**:
+  - Use with caution in production environments
+  - Test thoroughly in staging first
+  - Consider contributing improvements (see Contributing section)
+  - Default to basic configuration if unsure
+
+#### 3. Rate Limiting Considerations
+- **Issue**: WordPress REST API has rate limits
+- **Impact**: Bulk operations might be throttled
+- **Mitigation**: 
+  - Use batch processing features
+  - Implement appropriate delays between requests
+  - Monitor API response headers for rate limit info
+
+#### 4. Memory Management
+- **Issue**: Large operations can consume significant memory
+- **Impact**: Potential performance degradation
+- **Best Practices**:
+  - Monitor system resources during large operations
+  - Use pagination for large datasets
+  - Implement cleanup routines
+
+### Future Improvements
+We're actively working on:
+1. Improved response handling in Claude Desktop
+2. Stable release of capabilities control
+3. Advanced rate limiting management
+4. Memory optimization techniques
+
+> 🎸 Pro Tip: Check our GitHub Issues for workarounds and best practices!
+
 ## 🎸 Support and Community ❤️
 
 - GitHub Issues: Report bugs and request features
-- Discord: Join our metal community 🖤
 - Documentation: Full technical docs
 - Examples: Sample implementations
 
@@ -755,7 +870,7 @@ If you think the Community Edition rocks hard, just wait until you see what's co
 - **Advanced AI**: Specialized models for WordPress
 - **Pro UI Options**: From Claude Desktop integration to full Universal Portal
 
-> 🎸 **Stay Tuned**: Join our Discord to be the first to know when Pro launches and get early access to our epic interfaces!
+> 🎸 **Stay Tuned**: Follow our GitHub repository to be the first to know when Pro launches and get early access to our epic interfaces!
 
 ---
 
