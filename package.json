@@ -6,7 +6,7 @@
   "private": false,
   "author": "SimHop IT & Media AB",
   "homepage": "https://simhop.se",
-  "bugs": "https://github.com/deus-h/claudeus-wp-mcp/issues",
+  "bugs": "https://github.com/deus-h/claudeus-wp-mcp/discussions",
   "type": "module",
   "engines": {
     "node": ">=16"

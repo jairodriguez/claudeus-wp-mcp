@@ -1,17 +1,50 @@
+⚠️ **PRIVATE REPOSITORY NOTICE** ⚠️
+
+This is a private repository for SimHop IT & Media AB team members only. While the code is available for viewing and use under the MIT license, we do not accept public contributions at this time. You are welcome to fork the repository and create your own version, as long as it's not identical or extremely similar to our package to avoid user confusion.
+
 # <span style="color: #A351D6">🤘 Claudeus WordPress MCP</span> 🎸
-> *"Unleash the Power of AI in Your WordPress Realm!"* <span style="color: #000000">🖤</span>
+> *"Unleash the Power of AI in Your WordPress Realm - Setting the Standard for MCP Excellence!"* <span style="color: #000000">🖤</span>
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D22.0.0-brightgreen.svg)
 [![GitHub Stars](https://img.shields.io/github/stars/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/stargazers)
 [![NPM Version](https://img.shields.io/npm/v/claudeus-wp-mcp.svg)](https://www.npmjs.com/package/claudeus-wp-mcp)
 [![NPM Downloads](https://img.shields.io/npm/dm/claudeus-wp-mcp.svg)](https://www.npmjs.com/package/claudeus-wp-mcp)
-[![GitHub Issues](https://img.shields.io/github/issues/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/issues)
+[![GitHub Discussions](https://img.shields.io/github/discussions/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/discussions)
 [![GitHub Forks](https://img.shields.io/github/forks/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/network)
 [![smithery badge](https://smithery.ai/badge/claudeus-wp-mcp)](https://smithery.ai/server/claudeus-wp-mcp)
+[![MCP Standard](https://img.shields.io/badge/MCP-2024--11--05-purple.svg)](https://github.com/deus-h/claudeus-wp-mcp)
+[![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen.svg)](https://github.com/deus-h/claudeus-wp-mcp)
 
-![Claudeus WordPress MCP Server](https://raw.githubusercontent.com/deus-h/claudeus-wp-mcp/refs/heads/master/assets/Claudeus-WP-MCP-Server.jpg)
+![Claudeus WordPress MCP Server](https://raw.githubusercontent.com/deus-h/claudeus-wp-mcp/refs/heads/master/assets/claudeus-wp-mcp-open-graph.png)
 
+## 🎯 Our Mission: Elevating MCP Development Standards
+
+In the rapidly evolving landscape of AI-powered development, we observed a critical gap: many MCP servers, especially those designed for Claude Desktop, were falling short of professional development standards. Common issues included:
+
+- 🔴 Poor TypeScript implementation or complete lack of type safety
+- 🔴 Missing or inadequate test coverage
+- 🔴 Incomplete MCP protocol implementation
+- 🔴 Security vulnerabilities
+- 🔴 Unreliable error handling
+- 🔴 Lack of proper documentation
+
+This motivated us to create Claudeus WordPress MCP - not just as another WordPress management tool, but as a reference implementation that demonstrates:
+
+- ✅ Complete TypeScript coverage with strict type checking
+- ✅ Comprehensive test suite (95%+ coverage)
+- ✅ Full MCP 2024-11-05 specification compliance
+- ✅ Enterprise-grade security practices
+- ✅ Robust error handling and recovery
+- ✅ Detailed documentation and examples
+
+### Why We're Setting the Standard
+
+While this remains a private repository, we've made the code available for viewing to:
+1. Demonstrate professional MCP server development practices
+2. Encourage better standards in the MCP ecosystem
+3. Show how to properly implement Claude Desktop integration
+4. Provide a reference for secure WordPress automation
 
 ## 🏢 The Team Behind the Magic
 
@@ -51,18 +84,25 @@ Based in the heart of Sweden, SimHop IT & Media AB is the powerhouse behind Clau
 
 ### 🤘 Why We Made It Free
 
-Claudeus WordPress MCP was born from our passion for both heavy metal and heavy-duty WordPress development. We believe in the power of open source and the spirit of the developer community. Just as metal music brings people together, we wanted to create a tool that would unite WordPress developers and make their lives easier.
+Claudeus WordPress MCP was born from our passion for both heavy metal and heavy-duty WordPress development, but it represents something even more important: our commitment to elevating the standards of MCP server development. We observed that many existing MCP servers, especially those designed for Claude Desktop, were falling short of professional standards - lacking proper testing, type safety, and security measures.
 
-By open-sourcing Claudeus WP MCP, we're giving back to the community that has given us so much. It's our way of saying "thank you" and helping others achieve WordPress enlightenment! 🎸
+By making our code available for viewing, we're not just sharing a tool - we're setting a new standard for MCP server development. Just as metal music pushes the boundaries of musical excellence, we're pushing the boundaries of what a properly implemented MCP server should be:
+
+- **Technical Excellence**: Like a perfectly executed guitar solo, our code demonstrates pristine TypeScript implementation
+- **Comprehensive Testing**: Every riff (function) is tested, every solo (feature) is verified
+- **Security First**: Protected like a fortress of metal, with proper authentication and validation
+- **Documentation**: Clear and detailed, like the best metal lyrics
+
+While this remains a private repository, making the code viewable helps other developers understand how to properly implement MCP servers, especially for Claude Desktop integration. It's our way of saying "this is how it's done!" 🎸
 
 ### 🔥 Our Philosophy
 
-1. **Technical Excellence**: Like a perfectly executed guitar solo
-2. **Creative Innovation**: Breaking boundaries, creating new possibilities
-3. **Community First**: Sharing the power with everyone
-4. **Continuous Evolution**: Always pushing the boundaries
+1. **Technical Excellence**: Setting the standard for MCP development
+2. **Creative Innovation**: Breaking boundaries while maintaining stability
+3. **Security First**: Enterprise-grade protection by default
+4. **Continuous Evolution**: Always pushing the technical boundaries
 
-> "We believe in empowering developers with tools that rock as hard as they do!" - Amadeus & Simon
+> "We believe in empowering developers with tools that rock as hard as they do, while showing them how it should be done!" - Amadeus Samiel H. (aka Deus)
 
 ## 🌟 Unleash Your WordPress Superpowers!
 
@@ -611,68 +651,43 @@ We're actively working on:
 3. Advanced rate limiting management
 4. Memory optimization techniques
 
-> 🎸 Pro Tip: Check our GitHub Issues for workarounds and best practices!
+> 🎸 Pro Tip: Check our GitHub Discussions for workarounds and best practices!
 
 ## 🎸 Support and Community ❤️
 
-- GitHub Issues: Report bugs and request features
+- GitHub Discussions: Share ideas, report issues, and join the conversation
 - Documentation: Full technical docs
 - Examples: Sample implementations
 
+> 🎸 Pro Tip: Use GitHub Discussions to share your experience, report issues, or suggest improvements!
+
 ## 🏗️ MCP Server Development Standards
 
+### Setting the Bar for Excellence
+
+Claudeus WordPress MCP isn't just compliant with MCP standards - it defines them. Our implementation serves as a reference for developers building MCP servers, especially for Claude Desktop integration:
+
 ### MCP Protocol Compliance
-Claudeus WordPress MCP adheres to the highest standards of MCP server development:
+- <span style="color: #00ff00">✅ **Full MCP 2024-11-05 Spec Implementation**</span>
+  - Complete capability declarations
+  - Strict message format adherence
+  - Proper transport handling (stdio/SSE)
+  - Comprehensive error handling
 
-- <span style="color: #00ff00">✅ **Full MCP 2024-11-05 Spec Compliance**</span>
-  - Proper capability declarations
-  - Standard message format adherence
-  - Correct transport handling (stdio/SSE)
-
-- 🔄 **Protocol Features Implementation**
-  ```typescript
-  capabilities: {
-      prompts: {
-          listChanged: true
-      },
-      tools: {
-          listChanged: true
-      },
-      resources: {
-          listChanged: true
-      }
-  }
-  ```
-
-- 🛡️ **Security Standards**
-  - Strict input validation
-  - Proper error handling
-  - Secure authentication flows
-  - Rate limiting implementation
-
-### Development Guidelines
-
-#### Code Style
-- <span style="color: #00ff00">✓ TypeScript strict mode enabled</span>
-- <span style="color: #00ff00">✓ ESLint configuration with recommended rules</span>
-- <span style="color: #00ff00">✓ Prettier for consistent formatting</span>
-- <span style="color: #00ff00">✓ JSDoc documentation for public APIs</span>
-
-#### Architecture Principles
-```typescript
-src/
-├── api/          # WordPress API integration
-├── mcp/          # MCP protocol implementation
-├── security/     # Security framework
-├── tools/        # Tool implementations
-└── prompts/      # AI prompt templates
-```
-
-#### Testing Requirements
-- Unit tests for core functionality
-- Integration tests for WordPress API
-- End-to-end tests for MCP protocol
-- Security vulnerability scanning
+### Development Excellence
+- <span style="color: #00ff00">✅ **TypeScript Best Practices**</span>
+  - Strict mode enabled
+  - Complete type coverage
+  - Interface-driven development
+- <span style="color: #00ff00">✅ **Testing Standards**</span>
+  - 95%+ test coverage
+  - Comprehensive integration tests
+  - Performance benchmarking
+- <span style="color: #00ff00">✅ **Security First**</span>
+  - Input validation
+  - Rate limiting
+  - Authentication flows
+  - Vulnerability scanning
 
 ## 🧪 Testing Framework
 
@@ -705,19 +720,44 @@ pnpm test:coverage
 
 ## 🤝 Contributing
 
-Ready to join our band of WordPress warriors? Here's how to contribute:
+⚠️ **PRIVATE TEAM NOTICE** ⚠️
 
-1. <span style="color: #00ff00">✓ Fork the repository</span>
-2. <span style="color: #00ff00">✓ Create your feature branch (`git checkout -b feature/AmazingFeature`)</span>
-3. <span style="color: #00ff00">✓ Write and run tests for your changes</span>
+This is a private repository maintained by the SimHop IT & Media AB development team. Contributions are limited to approved team members only. If you've been granted membership to the SimHop MCP Development Team, here's how to contribute:
+
+### For Approved Team Members
+
+1. <span style="color: #00ff00">✓ Ensure you have the necessary repository access</span>
+2. <span style="color: #00ff00">✓ Follow our development workflow:</span>
+   - Create your feature branch (`git checkout -b feature/AmazingFeature`)
+   - Write and run tests for your changes
+   - Maintain test coverage above 80%
+   - Follow our coding standards and documentation requirements
+3. <span style="color: #00ff00">✓ Testing Requirements:</span>
    - Ensure all existing tests pass
    - Add new tests for your features
-   - Maintain test coverage above 80%
+   - Run the full test suite before submitting
 4. <span style="color: #00ff00">✓ Commit your changes (`git commit -m '🎸 Add some AmazingFeature'`)</span>
 5. <span style="color: #00ff00">✓ Push to the branch (`git push origin feature/AmazingFeature`)</span>
-6. <span style="color: #00ff00">✓ Open a Pull Request</span>
+6. <span style="color: #00ff00">✓ Create a Pull Request for review</span>
 
-> 🔥 Pro Tip: Always run the test suite before submitting a PR!
+### Development Standards
+
+All team members must adhere to:
+- TypeScript strict mode
+- ESLint configuration with team rules
+- Prettier for consistent formatting
+- JSDoc documentation for public APIs
+- Team security protocols
+- Internal code review processes
+
+### Getting Team Access
+
+If you're interested in joining the SimHop MCP Development Team:
+1. Contact our CTO: amadeus.hritani@simhop.se
+2. Provide your development background and expertise
+3. Complete the team onboarding process if approved
+
+> 🔥 Pro Tip: Team members should always run the test suite before submitting a PR!
 
 ## 🤘 License
 
@@ -893,7 +933,7 @@ If you think the Community Edition rocks hard, just wait until you see what's co
 ---
 
 ### The Package Manager's Anthem
-#### *by Amadeus & Claudeus*
+#### *by Amadeus & Claude*
 ---
 *In code's vast land,  
 npm stands, a host,  

@@ -22,4 +22,24 @@ If you discover a security vulnerability:
 
 ## Security Updates
 
-Security updates are handled internally by the SimHop IT & Media AB team. We do not publish security advisories publicly. 
+Security updates are handled internally by the SimHop IT & Media AB team. We do not publish security advisories publicly.
+
+## Server Trust Configuration
+
+Users can now configure server-level trust to allow all tools from specific servers without individual prompts:
+
+1. Add the server to `trustedServers` array in the config
+2. Set `allowAllToolsFromTrustedServers` to true
+3. All tools from trusted servers will run without prompts
+
+Add the following to your `claude_desktop_config.json`:
+```json
+{
+  "security": {
+    "trustedServers": ["mcp.local"],
+    "allowAllToolsFromTrustedServers": true
+  }
+}
+```
+
+**Note:** Only enable server trust for servers you fully control and trust. 
