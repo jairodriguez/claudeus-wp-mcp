@@ -1,10 +1,10 @@
 {
   "name": "claudeus-wp-mcp",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Model Context Protocol server for WordPress integration",
   "license": "MIT",
   "private": false,
-  "author": "SimHop IT & Media AB",
+  "author": "Amadeus Samiel H.",
   "homepage": "https://simhop.se",
   "bugs": "https://github.com/deus-h/claudeus-wp-mcp/discussions",
   "type": "module",

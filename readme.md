@@ -1,7 +1,3 @@
-⚠️ **PRIVATE REPOSITORY NOTICE** ⚠️
-
-This is a private repository for SimHop IT & Media AB team members only. While the code is available for viewing and use under the MIT license, we do not accept public contributions at this time. You are welcome to fork the repository and create your own version, as long as it's not identical or extremely similar to our package to avoid user confusion.
-
 # <span style="color: #A351D6">🤘 Claudeus WordPress MCP</span> 🎸
 > *"Unleash the Power of AI in Your WordPress Realm - Setting the Standard for MCP Excellence!"* <span style="color: #000000">🖤</span>
 
@@ -10,99 +6,9 @@ This is a private repository for SimHop IT & Media AB team members only. While t
 [![GitHub Stars](https://img.shields.io/github/stars/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/stargazers)
 [![NPM Version](https://img.shields.io/npm/v/claudeus-wp-mcp.svg)](https://www.npmjs.com/package/claudeus-wp-mcp)
 [![NPM Downloads](https://img.shields.io/npm/dm/claudeus-wp-mcp.svg)](https://www.npmjs.com/package/claudeus-wp-mcp)
-[![GitHub Discussions](https://img.shields.io/github/discussions/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/discussions)
-[![GitHub Forks](https://img.shields.io/github/forks/deus-h/claudeus-wp-mcp.svg)](https://github.com/deus-h/claudeus-wp-mcp/network)
-[![smithery badge](https://smithery.ai/badge/claudeus-wp-mcp)](https://smithery.ai/server/claudeus-wp-mcp)
 [![MCP Standard](https://img.shields.io/badge/MCP-2024--11--05-purple.svg)](https://github.com/deus-h/claudeus-wp-mcp)
-[![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen.svg)](https://github.com/deus-h/claudeus-wp-mcp)
 
 ![Claudeus WordPress MCP Server](https://raw.githubusercontent.com/deus-h/claudeus-wp-mcp/refs/heads/master/assets/claudeus-wp-mcp-open-graph.png)
-
-## 🎯 Our Mission: Elevating MCP Development Standards
-
-In the rapidly evolving landscape of AI-powered development, we observed a critical gap: many MCP servers, especially those designed for Claude Desktop, were falling short of professional development standards. Common issues included:
-
-- 🔴 Poor TypeScript implementation or complete lack of type safety
-- 🔴 Missing or inadequate test coverage
-- 🔴 Incomplete MCP protocol implementation
-- 🔴 Security vulnerabilities
-- 🔴 Unreliable error handling
-- 🔴 Lack of proper documentation
-
-This motivated us to create Claudeus WordPress MCP - not just as another WordPress management tool, but as a reference implementation that demonstrates:
-
-- ✅ Complete TypeScript coverage with strict type checking
-- ✅ Comprehensive test suite (95%+ coverage)
-- ✅ Full MCP 2024-11-05 specification compliance
-- ✅ Enterprise-grade security practices
-- ✅ Robust error handling and recovery
-- ✅ Detailed documentation and examples
-
-### Why We're Setting the Standard
-
-While this remains a private repository, we've made the code available for viewing to:
-1. Demonstrate professional MCP server development practices
-2. Encourage better standards in the MCP ecosystem
-3. Show how to properly implement Claude Desktop integration
-4. Provide a reference for secure WordPress automation
-
-## 🏢 The Team Behind the Magic
-
-### SimHop IT & Media AB - Where Innovation Meets Metal 🤘
-
-Based in the heart of Sweden, SimHop IT & Media AB is the powerhouse behind Claudeus WordPress MCP. We're not your typical tech company - we're a fusion of technical excellence and creative innovation, orchestrating digital solutions that rock! 
-
-#### 🎸 The Maestros
-
-**Amadeus Samiel H. (CTO/Lead Solutions Architect)**
-- MSc in Computer Science
-- 20+ years crafting digital excellence
-- Instructor at LIU and other institutes
-- The technical virtuoso behind Claudeus WP MCP
-- Specializations: System Architecture, Creative Development, Technical Education
-
-**Simon Malki (CEO)**
-- 20+ years orchestrating business success
-- Expert in strategic planning and market dynamics
-- The business mastermind driving SimHop's vision
-- Specializations: Business Strategy, Market Analysis, Technical Operations
-
-#### 🏗️ Our Dual-Power Structure
-
-**Stockholm HQ (Business & Strategy)**
-📍 Krögers Promenad 11, 191 37 Sollentuna
-- Strategic Operations
-- Business Development
-- Market Strategy
-- Client Relations
-
-**Norrköping Division (Technical Innovation)**
-📍 Klingsbergsgatan 13, 603 54 Norrköping
-- Development & Architecture
-- Technical Innovation
-- R&D Operations
-
-### 🤘 Why We Made It Free
-
-Claudeus WordPress MCP was born from our passion for both heavy metal and heavy-duty WordPress development, but it represents something even more important: our commitment to elevating the standards of MCP server development. We observed that many existing MCP servers, especially those designed for Claude Desktop, were falling short of professional standards - lacking proper testing, type safety, and security measures.
-
-By making our code available for viewing, we're not just sharing a tool - we're setting a new standard for MCP server development. Just as metal music pushes the boundaries of musical excellence, we're pushing the boundaries of what a properly implemented MCP server should be:
-
-- **Technical Excellence**: Like a perfectly executed guitar solo, our code demonstrates pristine TypeScript implementation
-- **Comprehensive Testing**: Every riff (function) is tested, every solo (feature) is verified
-- **Security First**: Protected like a fortress of metal, with proper authentication and validation
-- **Documentation**: Clear and detailed, like the best metal lyrics
-
-While this remains a private repository, making the code viewable helps other developers understand how to properly implement MCP servers, especially for Claude Desktop integration. It's our way of saying "this is how it's done!" 🎸
-
-### 🔥 Our Philosophy
-
-1. **Technical Excellence**: Setting the standard for MCP development
-2. **Creative Innovation**: Breaking boundaries while maintaining stability
-3. **Security First**: Enterprise-grade protection by default
-4. **Continuous Evolution**: Always pushing the technical boundaries
-
-> "We believe in empowering developers with tools that rock as hard as they do, while showing them how it should be done!" - Amadeus Samiel H. (aka Deus)
 
 ## 🌟 Unleash Your WordPress Superpowers!
 
@@ -148,16 +54,6 @@ This isn't just a tool – it's your ticket to WordPress enlightenment. Whether 
 Ready to transform your WordPress workflow from a garage band to a stadium-filling metal symphony? Let's rock! 🎸
 
 ## 📖 Quick Start Guide
-
-
-### Installing via Smithery
-
-To install claudeus-wp-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/claudeus-wp-mcp):
-
-```bash
-npx -y @smithery/cli install claudeus-wp-mcp --client claude
-```
-
 
 ### Using with Claude Desktop
 If you're using Claude Desktop, you only need to:
@@ -651,7 +547,6 @@ We're actively working on:
 3. Advanced rate limiting management
 4. Memory optimization techniques
 
-> 🎸 Pro Tip: Check our GitHub Discussions for workarounds and best practices!
 
 ## 🎸 Support and Community ❤️
 
@@ -871,60 +766,93 @@ Use these tools with caution to avoid unintended changes. Always:
 
 > "With great power comes great responsibility." Use these tools wisely to enhance your WordPress site while maintaining its integrity.
 
-## <span style="color: #A351D6">🚀 Coming Soon: Claudeus WordPress MCP Pro</span>
+## 🎯 Our Mission: Elevating MCP Development Standards
 
-If you think the Community Edition rocks hard, just wait until you see what's coming in the Pro version! 🤘
+In the rapidly evolving landscape of AI-powered development, we observed a critical gap: many MCP servers, especially those designed for Claude Desktop, were falling short of professional development standards. Common issues included:
 
-### <span style="color: #A351D6">Pro Subscription Tiers</span> 🎸
+- 🔴 Poor TypeScript implementation or complete lack of type safety
+- 🔴 Missing or inadequate test coverage
+- 🔴 Incomplete MCP protocol implementation
+- 🔴 Security vulnerabilities
+- 🔴 Unreliable error handling
+- 🔴 Lack of proper documentation
 
-> **The Philosophy Behind Our Names**: Our tier names follow the evolution of artificial intelligence itself - from basic neural networks to quantum computing, and finally to technological singularity. This progression represents not just increasing capabilities, but the transformation of WordPress management through advancing AI technology.
+This motivated us to create Claudeus WordPress MCP - not just as another WordPress management tool, but as a reference implementation that demonstrates:
 
-#### 1. <span style="color: #A351D6">Claudeus WP Neural Server</span> 🤘
-*The First Spark of AI-Powered WordPress Management*
-| Feature | Description |
-|---------|-------------|
-| **Advanced AI Models** | Access to specialized WordPress-optimized AI models |
-| **Custom Prompts** | Create and save your own AI prompts |
-| **Bulk Operations Pro** | Handle unlimited posts across unlimited sites |
-| **Priority Support** | Direct access to our metal crew |
+- ✅ Complete TypeScript coverage with strict type checking
+- ✅ Comprehensive test suite (95%+ coverage)
+- ✅ Full MCP 2024-11-05 specification compliance
+- ✅ Enterprise-grade security practices
+- ✅ Robust error handling and recovery
+- ✅ Detailed documentation and examples
 
-#### 2. <span style="color: #A351D6">Claudeus WP Quantum Server</span> 🎸
-*Breaking Classical Limitations with Quantum-Level Processing*
-*Everything in Neural Server, plus:*
-| Feature | Description |
-|---------|-------------|
-| **Pro Web UI** | Comprehensive browser-based interface |
-| **Claude Desktop Integration** | Seamless MCP server connection |
-| **Extended API** | Advanced integrations and custom endpoints |
-| **Performance Boost** | Optimized for high-volume operations |
+### Why We're Setting the Standard
 
-#### 3. <span style="color: #A351D6">Claudeus WP Singularity Server</span> ⚡
-*The Ultimate Evolution of WordPress Management*
-*Everything in Quantum Server, plus:*
-| Feature | Description |
-|---------|-------------|
-| **Universal Portal** | One-click management for all sites |
-| **Enterprise Dashboard** | Complete WordPress empire control |
-| **Custom Development** | Tailored solutions and features |
-| **VIP Support** | Direct line to our core team |
+While this remains a private repository, we've made the code available for viewing to:
+1. Demonstrate professional MCP server development practices
+2. Encourage better standards in the MCP ecosystem
+3. Show how to properly implement Claude Desktop integration
+4. Provide a reference for secure WordPress automation
 
-> 🔥 **METAL ALERT**: The Community Edition you're looking at is already a beast... but our Pro versions represent the evolution of WordPress management:
-> - **Neural**: The foundation of AI power
-> - **Quantum**: The leap beyond classical limitations
-> - **Singularity**: The ultimate transformation
+## 🏢 The Team Behind the Magic
 
-### <span style="color: #A351D6">Why Go Pro?</span>
-- **Unlimited Power**: No restrictions, no limits
-- **Priority Features**: Get new features before anyone else
-- **Metal Support**: Direct line to our development warriors
-- **Custom Solutions**: Tailored to your specific needs
-- **Advanced AI**: Specialized models for WordPress
-- **Pro UI Options**: From Claude Desktop integration to full Universal Portal
+### SimHop IT & Media AB - Where Innovation Meets Metal 🤘
 
-> 🎸 **Stay Tuned**: Follow our GitHub repository to be the first to know when Pro launches and get early access to our epic interfaces!
+Based in the heart of Sweden, SimHop IT & Media AB is the powerhouse behind Claudeus WordPress MCP. We're not your typical tech company - we're a fusion of technical excellence and creative innovation, orchestrating digital solutions that rock! 
+
+#### 🎸 The Maestros
+
+**Amadeus Samiel H. (CTO/Lead Solutions Architect)**
+- MSc in Computer Science
+- 20+ years crafting digital excellence
+- Instructor at LIU and other institutes
+- The technical virtuoso behind Claudeus WP MCP
+- Specializations: System Architecture, Creative Development, Technical Education
+
+**Simon Malki (CEO)**
+- 20+ years orchestrating business success
+- Expert in strategic planning and market dynamics
+- The business mastermind driving SimHop's vision
+- Specializations: Business Strategy, Market Analysis, Technical Operations
+
+#### 🏗️ Our Dual-Power Structure
+
+**Stockholm HQ (Business & Strategy)**
+📍 Krögers Promenad 11, 191 37 Sollentuna
+- Strategic Operations
+- Business Development
+- Market Strategy
+- Client Relations
+
+**Norrköping Division (Technical Innovation)**
+📍 Klingsbergsgatan 13, 603 54 Norrköping
+- Development & Architecture
+- Technical Innovation
+- R&D Operations
+
+### 🤘 Why We Made It Free
+
+Claudeus WordPress MCP was born from our passion for both heavy metal and heavy-duty WordPress development, but it represents something even more important: our commitment to elevating the standards of MCP server development. We observed that many existing MCP servers, especially those designed for Claude Desktop, were falling short of professional standards - lacking proper testing, type safety, and security measures.
+
+By making our code available for viewing, we're not just sharing a tool - we're setting a new standard for MCP server development. Just as metal music pushes the boundaries of musical excellence, we're pushing the boundaries of what a properly implemented MCP server should be:
+
+- **Technical Excellence**: Like a perfectly executed guitar solo, our code demonstrates pristine TypeScript implementation
+- **Comprehensive Testing**: Every riff (function) is tested, every solo (feature) is verified
+- **Security First**: Protected like a fortress of metal, with proper authentication and validation
+- **Documentation**: Clear and detailed, like the best metal lyrics
+
+While this remains a private repository, making the code viewable helps other developers understand how to properly implement MCP servers, especially for Claude Desktop integration. It's our way of saying "this is how it's done!" 🎸
+
+### 🔥 Our Philosophy
+
+1. **Technical Excellence**: Setting the standard for MCP development
+2. **Creative Innovation**: Breaking boundaries while maintaining stability
+3. **Security First**: Enterprise-grade protection by default
+4. **Continuous Evolution**: Always pushing the technical boundaries
+
+> "We believe in empowering developers with tools that rock as hard as they do, while showing them how it should be done!" - Amadeus Samiel H. (aka Deus)
 
 ---
-
 ## 🧙‍♂️ Words of Wisdom
 
 > `npm` is not a package manager, it's a repository of packages. If you want a dependable package manager, always use `pnpm`  
