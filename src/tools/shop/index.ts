@@ -39,10 +39,10 @@ export const shopTools: Tool[] = [
             type: 'object',
             required: [],
             properties: {
-                site: { 
-                    type: 'string', 
-                    description: 'Site alias (defaults to default_test)',
-                    default: 'default_test'
+                site: {
+                    type: 'string',
+                    description: `Site alias (defaults to ${DEFAULT_SITE})`,
+                    default: DEFAULT_SITE
                 },
                 filters: {
                     type: 'object',
@@ -69,10 +69,10 @@ export const shopTools: Tool[] = [
             type: 'object',
             required: [],
             properties: {
-                site: { 
-                    type: 'string', 
-                    description: 'Site alias (defaults to default_test)',
-                    default: 'default_test'
+                site: {
+                    type: 'string',
+                    description: `Site alias (defaults to ${DEFAULT_SITE})`,
+                    default: DEFAULT_SITE
                 },
                 filters: {
                     type: 'object',

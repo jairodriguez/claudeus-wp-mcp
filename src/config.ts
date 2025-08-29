@@ -4,7 +4,7 @@ import fs from 'fs';
 
 config();
 
-export const DEFAULT_SITE = 'default_test';
+export const DEFAULT_SITE = 'aiwithjai';
 
 export function loadSiteConfigurations(configPath: string): SiteConfigurations {
     const rawConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));

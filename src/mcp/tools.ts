@@ -278,10 +278,10 @@ export function registerTools(server: Server, clients: Map<string, {
                     type: 'object',
                     required: [],
                     properties: {
-                        site: { 
-                            type: 'string', 
-                            description: 'Site alias (defaults to default_test)',
-                            default: 'default_test'
+                        site: {
+                            type: 'string',
+                            description: `Site alias (defaults to ${DEFAULT_SITE})`,
+                            default: DEFAULT_SITE
                         },
                         filters: {
                             type: 'object',
